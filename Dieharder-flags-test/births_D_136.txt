@@ -1,0 +1,2 @@
+./dieharder -D 136 -g 201 -d 0 -p 100 -f ../input/400MB.dat
+   diehard_birthdays|0.44676619
