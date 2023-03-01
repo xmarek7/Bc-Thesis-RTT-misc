@@ -1,0 +1,10 @@
+xmarek7@LAPTOP-H6TRSQS8:~/rtt-statistical-batteries-master$ ./dieharder -D 0 -g 201 -d 0 -p 100 -f ../input/400MB.dat
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|              ../input/400MB.dat|  1.65e+07  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+   diehard_birthdays|   0|       100|     100|0.51925388|  PASSED
