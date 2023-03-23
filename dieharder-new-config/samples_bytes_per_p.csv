@@ -28,3 +28,15 @@ diehard_squeeze,13,461309712,50,9226194
 diehard_craps,16,270097968,50,5401959
 dab_filltree,207,452004068,1,452004068
 dab_filltree2,208,116856680,1,116856680
+../../input/1000MB_2.dat
+test_name,test_id,total_bytes,psamples,bytes_per_psample,suggested_psamples
+diehard_squeeze,13,461308324,50,9226166
+diehard_craps,16,269959568,50,5399191
+dab_filltree,207,451964576,1,451964576
+dab_filltree2,208,116889612,1,116889612
+../../input/2048MB_2.dat
+test_name,test_id,total_bytes,psamples,bytes_per_psample,suggested_psamples
+diehard_squeeze,13,461297636,50,9225952
+diehard_craps,16,270154728,50,5403094
+dab_filltree,207,451994848,1,451994848
+dab_filltree2,208,116817432,1,116817432
