@@ -55,8 +55,10 @@ def dieharder_test(file_size: int):
             ntup_min, ntup_max = NTUPLES[test_id]
             for ntup in range(ntup_min, ntup_max):
                 variant = dieharder_variant(test_id, ntup, file_size)
-                if variant is not None:
-                    test["variants"].append(variant)
+                # number of needed bytes only grows with ntup, so we can safely break
+                if variant is None:
+                    break
+                test["variants"].append(variant)
         else:
             psamples = calculate_psamples(test_id, None, file_size)
             if psamples > 0:
@@ -68,6 +70,9 @@ def dieharder_test(file_size: int):
         if (test.get("psamples", None) is not None and test["psamples"] > 0) or len(test.get("variants", [])) > 0:
             result["test-specific-settings"].append(test)
             test_ids.append(test_id)
+    # No test set for execution
+    if len(test_ids) == 0:
+        return {}
     result["defaults"]["test-ids"] = concacenate_test_ids(test_ids)
     return result
 
