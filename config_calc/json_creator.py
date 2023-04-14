@@ -13,8 +13,9 @@ def create_json(json_file,file_size: int):
     result = {"randomness-testing-toolkit": {
         "dieharder-settings": dieharder.dieharder_test(file_size),
         "nist-sts-settings": nist_sts.nist_sts_test(file_size),
-        "tu01-smallcrush-settings": testu01.smallcrush(file_size),
         "tu01-rabbit-settings": testu01.rabbit(file_size),
+        "tu01-smallcrush-settings": testu01.smallcrush(file_size),
+        "tu01-crush-settings": testu01.crush(file_size),
         "tu01-alphabit": testu01.alphabit(file_size),
         "tu01-blockalphabit": testu01.block_alphabit(file_size)
         }
