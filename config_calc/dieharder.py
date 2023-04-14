@@ -53,7 +53,7 @@ def dieharder_test(file_size: int):
         if test_id in {200, 201, 202, 203}:
             test["variants"] = []
             ntup_min, ntup_max = NTUPLES[test_id]
-            for ntup in range(ntup_min, ntup_max):
+            for ntup in range(ntup_min, ntup_max + 1):
                 variant = dieharder_variant(test_id, ntup, file_size)
                 # number of needed bytes only grows with ntup, so we can safely break
                 if variant is None:
