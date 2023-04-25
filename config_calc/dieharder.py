@@ -10,12 +10,11 @@ BYTES_PER_PSAMPLE = {  0:   153600,    1: 4000020,     2: 5120000,     3: 240000
                      102: 400000,    204: 40000,     205: 614400000, 206: 51200000,
                      207: 452168105, 208: 116933538, 209: 260000000}
 
-
 NTUPLES = {200: (1, 12), 201: (2, 5), 202: (2,5), 203: (0,32)}
 
 TEST_IDS = [0, 1, 2, 3, 4, 8, 9, 10, 11, 12, 13, 15, 16, 17, 100, 101, 102, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209]
 
-def get_bytes_per_psample(test_id: int, ntup: Optional[int]) -> Optional[int]:
+def get_bytes_per_psample(args, test_id: int, ntup: Optional[int]) -> Optional[int]:
     if test_id == 200 and 1 <= ntup <= 12:
         return ntup * 800000 + 4
     elif test_id == 201 and 2 <= ntup <= 5:
@@ -24,19 +23,23 @@ def get_bytes_per_psample(test_id: int, ntup: Optional[int]) -> Optional[int]:
         return ntup * 400000
     elif test_id == 203 and 0 <= ntup <= 32:
         return (ntup + 1) * 4000000
-    elif ntup is None:
+    elif test_id in {13, 16, 207, 208}:
+        return int(BYTES_PER_PSAMPLE[test_id] * (1 + args.dieharder_threshold))
+    elif test_id in {0, 1, 2, 3, 4, 8, 9, 10, 11, 12, 15, 17, 100, 101, 102, 204, 205, 206, 209} and ntup is None:
         return BYTES_PER_PSAMPLE[test_id]
     raise ValueError("Invalid test id or combination of test id and ntuples")
 
 
-def calculate_psamples(test_id: int, ntup: Optional[int], file_size: int) -> int:
+def calculate_psamples(args, test_id: int, ntup: Optional[int], file_size: int) -> int:
     if test_id == 0:
-        return (file_size - 24) // get_bytes_per_psample(test_id, ntup)
-    return file_size // get_bytes_per_psample(test_id, ntup)
+        psamples = (file_size - 24) // get_bytes_per_psample(args, test_id, ntup)
+    else:
+        psamples = file_size // get_bytes_per_psample(args, test_id, ntup)
+    return psamples + (1 if args.dieharder_increased else 0)
 
 
-def dieharder_variant(test_id: int, ntup: int, file_size: int, psample_offset: bool):
-    psamples = calculate_psamples(test_id, ntup, file_size) + (1 if psample_offset else 0)
+def dieharder_variant(args, test_id: int, ntup: int, file_size: int):
+    psamples = calculate_psamples(args, test_id, ntup, file_size)
     if psamples == 0:
         return None
     result = {}
@@ -47,56 +50,61 @@ def dieharder_variant(test_id: int, ntup: int, file_size: int, psample_offset: b
     return result
 
 
-def dieharder_test(file_size: int, psample_offset: bool):
-    test_ids = []
-    result = {"defaults": {"psamples": 100}, "test-specific-settings": []}
-    omitted_tests = []
+def dieharder_test(args, data_size: int):
+    result = {"defaults": {
+                    "psamples": 100,
+                    "test-ids": []},
+              "test-specific-settings": [],
+              "omitted-tests": []}
     for test_id in TEST_IDS:
-        test = {"test-id": test_id}
         if test_id in {200, 201, 202, 203}:
-            test["variants"] = []
-            omitted_variants = []
-            ntup_min, ntup_max = NTUPLES[test_id]
-            for ntup in range(ntup_min, ntup_max + 1):
-                variant = dieharder_variant(test_id, ntup, file_size, psample_offset)
-                if variant is None:
-                    if test.get("omitted-variants") is None:
-                        test["omitted-variants"] = [ntup]
-                    else:
-                        test["omitted-variants"].append(ntup)
-                else:
-                    test["variants"].append(variant)
+            dieharder_test_with_variants(args, test_id, result, data_size)
         else:
-            psamples = calculate_psamples(test_id, None, file_size) + (1 if psample_offset else 0)
-            if psamples > 0:
-                test["psamples"] = psamples
-            else:
-                omitted_tests.append(test_id)
-
-        if test_id in {13, 16, 207, 208}:
-            test["comment"] = "WARNING - Test with irregular read bytes."
-
-        if (test.get("psamples", None) is not None and test["psamples"] > 0) or len(test.get("variants", [])) > 0:
-            result["test-specific-settings"].append(test)
-            test_ids.append(test_id)
-        
-    # No test set for execution
-    if len(omitted_tests) > 0:
-        result["omitted-tests"] = concacenate_test_ids(omitted_tests)
-    if len(test_ids) == 0:
-        return result
-    result["defaults"]["test-ids"] = concacenate_test_ids(test_ids)
+            dieharder_no_variant_test(args, test_id, result, data_size)
+    result["defaults"]["test-ids"] = concacenate_test_ids(result["defaults"]["test-ids"])
+    result["omitted-tests"] = concacenate_test_ids(result["omitted-tests"])
     return result
 
 
-def dieharder_defaults():
+def dieharder_no_variant_test(args, test_id, result, data_size: int):
+    psamples = calculate_psamples(args, test_id, None, data_size)
+    if psamples > 0:
+        result["defaults"]["test-ids"].append(test_id)
+        result["test-specific-settings"].append({
+            "test_id": test_id,
+            "psample": psamples
+        })
+    else:
+        result["omitted-tests"].append(test_id)
+
+
+def dieharder_test_with_variants(args, test_id, result, data_size: int):
+    test = {
+        "test-id": test_id,
+        "variants": [],
+        "omitted-variants": []
+    }
+    ntup_min, ntup_max = NTUPLES[test_id]
+    for ntup in range(ntup_min, ntup_max + 1):
+                variant = dieharder_variant(args, test_id, ntup, data_size)
+                if variant is None:
+                    test["omitted-variants"].append("-n {}".format(ntup))
+                else:
+                    test["variants"].append(variant)
+
+    if len(test["variants"]) == 0:
+        result["omitted-tests"].append(test_id)
+    else:
+        result["defaults"]["test-ids"].append(test_id)
+        result["test-specific-settings"].append(test)
+
+
+def dieharder_defaults(args):
     defaults = {"test-ids": concacenate_test_ids(TEST_IDS),
                 "test-specific-defaults": []}
     for test_id in TEST_IDS:
-        test = {
-                    "test-id": test_id,
-                    "psamples": 100
-                }
+        test = {"test-id": test_id,
+                "psamples": 100}
         
         if test_id in {200, 201, 202, 203}:
             ntup_min, ntup_max = NTUPLES[test_id]
@@ -105,10 +113,10 @@ def dieharder_defaults():
             for ntup in range(ntup_min, ntup_max + 1):
                 test["variants"].append({
                     "ntup" : ntup,
-                    "bytes-per-psamples": get_bytes_per_psample(test_id, ntup)
+                    "bytes-per-psamples": get_bytes_per_psample(args, test_id, ntup)
                 })
         else:
-            test["bytes-per-psample"] = get_bytes_per_psample(test_id, None)
+            test["bytes-per-psample"] = get_bytes_per_psample(args, test_id, None)
 
         if test_id in {201, 204}:
             test["psamples"] = 1000
