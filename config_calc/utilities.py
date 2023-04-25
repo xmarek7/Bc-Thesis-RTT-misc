@@ -3,6 +3,8 @@ from typing import List
 
 def concacenate_test_ids(test_ids: List[int]) -> List[str]:
     concat = []
+    if len(test_ids) == 0:
+         return []
     first = test_ids[0]
     last = test_ids[0]
     for test_id in test_ids[1:]:
