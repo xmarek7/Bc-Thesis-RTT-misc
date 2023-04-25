@@ -12,9 +12,9 @@ import argparse
 
 def create_json(args, json_file, file_size: int):
     result = {"randomness-testing-toolkit": {
-        "options": argv, # TODO
-        "dieharder-settings": dieharder.dieharder_test(file_size, False),
-        "dieharder-defaults": dieharder.dieharder_defaults(),
+        "options": argv,
+        "dieharder-settings": dieharder.dieharder_test(args, file_size),
+        "dieharder-defaults": dieharder.dieharder_defaults(args),
         "nist-sts-settings": nist_sts.nist_sts_test(file_size),
         "tu01-rabbit-settings": testu01.rabbit(file_size),
         "tu01-smallcrush-settings": testu01.smallcrush(file_size),
