@@ -43,10 +43,10 @@ def dieharder_variant(args, test_id: int, ntup: int, file_size: int):
     if psamples == 0:
         return None
     result = {}
-    result["psamples"] = psamples 
     result["arguments"] = "-n {}".format(ntup)
     if test_id == 201:
         result["arguments"] += " -t 10000"
+    result["psamples"] = psamples 
     return result
 
 
@@ -71,8 +71,8 @@ def dieharder_no_variant_test(args, test_id, result, data_size: int):
     if psamples > 0:
         result["defaults"]["test-ids"].append(test_id)
         result["test-specific-settings"].append({
-            "test_id": test_id,
-            "psample": psamples
+            "test-id": test_id,
+            "psamples": psamples
         })
     else:
         result["omitted-tests"].append(test_id)
