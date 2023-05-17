@@ -15,6 +15,7 @@ NTUPLES = {200: (1, 12), 201: (2, 5), 202: (2,5), 203: (0,32)}
 TEST_IDS = [0, 1, 2, 3, 4, 8, 9, 10, 11, 12, 13, 15, 16, 17, 100, 101, 102, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209]
 
 def get_bytes_per_psample(args, test_id: int, ntup: Optional[int]) -> Optional[int]:
+    # test with ntuples
     if test_id == 200 and 1 <= ntup <= 12:
         return ntup * 800000 + 4
     elif test_id == 201 and 2 <= ntup <= 5:
@@ -23,8 +24,10 @@ def get_bytes_per_psample(args, test_id: int, ntup: Optional[int]) -> Optional[i
         return ntup * 400000
     elif test_id == 203 and 0 <= ntup <= 32:
         return (ntup + 1) * 4000000
+    # tests with irregular length
     elif test_id in {13, 16, 207, 208}:
         return int(BYTES_PER_PSAMPLE[test_id] * (1 + args.dieharder_threshold))
+    # rest of tests
     elif test_id in {0, 1, 2, 3, 4, 8, 9, 10, 11, 12, 15, 17, 100, 101, 102, 204, 205, 206, 209} and ntup is None:
         return BYTES_PER_PSAMPLE[test_id]
     raise ValueError("Invalid test id or combination of test id and ntuples")
@@ -35,7 +38,7 @@ def calculate_psamples(args, test_id: int, ntup: Optional[int], file_size: int) 
         psamples = (file_size - 24) // get_bytes_per_psample(args, test_id, ntup)
     else:
         psamples = file_size // get_bytes_per_psample(args, test_id, ntup)
-    return psamples + (1 if args.dieharder_increased else 0)
+    return psamples + (1 if args.increased else 0)
 
 
 def dieharder_variant(args, test_id: int, ntup: int, file_size: int):
@@ -73,7 +76,9 @@ def dieharder_no_variant_test(args, test_id, result, data_size: int):
         result["test-specific-settings"].append({
             "test-id": test_id,
             "psamples": psamples
-        })
+        })  
+        if test_id in {13, 16, 207, 208}:
+            result["test-specific-settings"][-1]["comment"] = "WARNING - this test reads irregular ammount of bytes."
     else:
         result["omitted-tests"].append(test_id)
 
