@@ -1,24 +1,32 @@
-unusual settings
+unusual settings:
 
 crush
-49, 50 - Q + K together
+49, 50 - Q + K together, jednoduché
 
 73 - n = 2^k, k <= 28
 
 74, 75 - recomended N >= 2^k, n=2^k
+
 74 k <= 26 - middle len output
 75 middle len output
 
-irregular lengths
+76 - moving L
+77 
 
-small_crush:
+irregular lengths:
+
+small_crush
 3
 5
 
-crush:
+crush
 27 - 34
-52
-64?
+55
+64
 
-80
-91-96?
+73 - není
+
+91-96
+
+output problem:
+47
