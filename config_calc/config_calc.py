@@ -95,7 +95,7 @@ def parse_arguments() -> argparse.Namespace:
 
     parser.add_argument("-u", "--tu01-threshold",
                         type=float,
-                        default=0.001,
+                        default=0.01,
                         help="Sets increase to TestU01's irregular test. Increased is calculated from mean read bytes.")
 
     return parser.parse_args()
