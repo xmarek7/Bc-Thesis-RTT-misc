@@ -270,7 +270,7 @@ def crush(args, battery: str, file_size: int):
                 "test-id": test_id,
                 "repetitions": repetitions
             }
-            if is_irregular(battery, test_id):
+            if is_irregular(battery, test_id) or (battery == "crush" and test_id == 64):
                 test["comment"] = "WARNING - this test reads irregular ammount of bytes."
             result["test-specific-settings"].append(test)
     
