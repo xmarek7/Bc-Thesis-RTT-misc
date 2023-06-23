@@ -113,6 +113,36 @@ SMALL_CRUSH_BYTES_PER_REPETITION = {
 }
 
 
+RABBIT_BYTES_PER_REPETITION = {
+    1:6553584,
+    2:6553600,
+    3:6553600,
+    4:6553600,
+    5:3060,
+    6:4194304,
+    7:131072,
+    8:6553200,
+    9:6553440,
+    10:6553600,
+    11:6553600,
+    12:6553600,
+    13:6553600,
+    14:6553600,
+    15:6553600,
+    16:6553600,
+    17:6553600,
+    18:6553596,
+    19:6553596,
+    20:5245668,
+    21:6553600,
+    22:6553600,
+    23:6553600,
+    24:6553600,
+    25:6553600,
+    26:6552968,
+}
+
+
 CRUSH_PARAMS = {
     1: "--params 1 500000000 0 4096 2",
     2: "--params 1 300000000 0 64 4",
@@ -235,11 +265,29 @@ def get_params(battery: str, test_id: int,)  -> str:
 
 def is_irregular(battery: str, test_id: int) -> bool:
     return (battery == "crush" and (27 <= test_id <= 34 or test_id in {55, 91, 92})) \
-            or (battery == "small_crush" and (test_id == 3 or test_id == 5))
+            or (battery == "small_crush" and (test_id == 3 or test_id == 5)) \
+            or (battery == "rabbit" and test_id == 20)
 
 
 def get_bytes_per_repetition(args, battery: str, test_id: int) -> int:
-    needed_bytes = CRUSH_BYTES_PER_REPETITION[test_id] if battery == "crush" else SMALL_CRUSH_BYTES_PER_REPETITION[test_id]
+    if battery == "crush":
+        needed_bytes = CRUSH_BYTES_PER_REPETITION[test_id]
+    elif battery == "small_crush":
+        needed_bytes = SMALL_CRUSH_BYTES_PER_REPETITION[test_id]
+    else:
+        raise ValueError("Uknown battery: {}".format(battery))
+
+    if is_irregular(battery, test_id):
+        return int(needed_bytes * (1 + args.tu01_threshold))
+    return needed_bytes
+
+
+def get_bits_per_repetition(args, battery: str, test_id: int) -> int:
+    if battery == "rabbit":
+        needed_bytes = RABBIT_BYTES_PER_REPETITION[test_id] * 8
+    else:
+        raise ValueError("Uknown battery: {}".format(battery))
+
     if is_irregular(battery, test_id):
         return int(needed_bytes * (1 + args.tu01_threshold))
     return needed_bytes
@@ -270,6 +318,7 @@ def crush(args, battery: str, file_size: int):
                 "test-id": test_id,
                 "repetitions": repetitions
             }
+    # crush 64 is treated separately - it has low variation in consumed data 
             if is_irregular(battery, test_id) or (battery == "crush" and test_id == 64):
                 test["comment"] = "WARNING - this test reads irregular ammount of bytes."
             result["test-specific-settings"].append(test)
@@ -279,39 +328,85 @@ def crush(args, battery: str, file_size: int):
     return result
 
             
-def rabbit(file_size: int):
-    return {
+def rabbit(args, file_size: int):
+    default_repetitions = (file_size * 8) // args.tu01_bit_nb
+    result = {
         "defaults" : {
-            "test-ids" : ["1-26"],
-            "repetitions": 1,
-            "bit-nb": str(file_size)
-        }
+            "test-ids" : [],
+            "repetitions": default_repetitions,
+            "bit-nb": str(args.tu01_bit_nb)
+        },
+        "test-specific-settings": [],
+        "omitted-tests": []
     }
+
+    for test_id in range(1, 27):
+        if test_id == 5:
+            result["omitted-tests"].append(test_id)
+            continue
+        
+        # TODO - changed bit_nb
+        repetitions = (file_size * 8 // get_bits_per_repetition(args, "rabbit", test_id)) + (1 if args.increased else 0)
+
+        if repetitions == 0:
+            result["omitted-tests"].add(test_id)
+        else:
+            result["defaults"]["test-ids"].append(test_id)
+
+        if repetitions != default_repetitions or is_irregular("rabbit", test_id):
+            test = {
+                "test-id": test_id,
+                "repetitions": repetitions
+            }
+
+            if is_irregular("rabbit", test_id):
+                test["comment"] = "WARNING - this test reads irregular ammount of bytes."
+            
+            result["test-specific-settings"].append(test)
+
+    result["defaults"]["test-ids"] = concacenate_test_ids(result["defaults"]["test-ids"])
+    result["omitted-tests"] = concacenate_test_ids(result["omitted-tests"])
+    return result
 
 
 def alphabit(args, file_size: int):
-    return{
-        "defaults":{
-            "test-ids": ["1-9"],
-            "repetitions": 1,
-            "bit-nb": str(file_size * 8),
-            "bit-r": "0",
-            "bit-s": "32"
-        }
-    }
+    repetitions = (file_size * 8) // args.tu01_bit_nb
 
-
-def block_alphabit(args, file_size: int):
     result = {
         "defaults":{
             "test-ids": ["1-9"],
-            "repetitions": 1,
-            "bit-nb": str(file_size * 8),
+            "repetitions": repetitions,
+            "bit-nb": str(args.tu01_bit_nb),
+            "bit-r": "0",
+            "bit-s": "32"
+        },
+        "ommited-tests": []
+    }
+
+    if repetitions == 0:
+        result["defaults"]["test-ids"] = []
+        result["ommited-tests"]: ["1-9"]
+
+    return result
+
+
+def block_alphabit(args, file_size: int):
+    repetitions = (file_size * 8) // args.tu01_bit_nb
+    result = {
+        "defaults":{
+            "test-ids": ["1-9"],
+            "repetitions": repetitions,
+            "bit-nb": str(args.tu01_bit_nb),
             "bit-r": "0",
             "bit-s": "32"
         },
         "test-specific-settings": []
     }
+    if repetitions == 0:
+        result["defaults"]["test-ids"] = []
+        result["ommited-tests"]: ["1-9"]
+        return result
+
     for test_id in range(1, 10):
         test = {
             "test-id": test_id,
@@ -319,7 +414,6 @@ def block_alphabit(args, file_size: int):
             "omitted-variants": []
         }
         for bit_w in [1, 2, 4, 8, 16, 32]:
-            repetitions = 1
             test["variants"].append({
                 "bit-w": str(bit_w),
                 "repetitions": repetitions
