@@ -20,7 +20,7 @@ def create_json(args, json_file, file_size: int):
 
             "nist-sts-settings": nist_sts.nist_sts_test(args, file_size),
 
-            "tu01-rabbit-settings": testu01.rabbit(file_size), #TODO
+            "tu01-rabbit-settings": testu01.rabbit(args, file_size), 
             
             "tu01-smallcrush-settings": testu01.crush(args, "small_crush", file_size),
             "tu01-smallcrush-defaults": testu01.crush_defaults(args, "small_crush"),
@@ -97,6 +97,12 @@ def parse_arguments() -> argparse.Namespace:
                         type=float,
                         default=0.01,
                         help="Sets increase to TestU01's irregular test. Increased is calculated from mean read bytes.")
+
+    parser.add_argument("-b", "--tu01-bit-nb",
+                        type=int,
+                        default=52428800,
+                        help="Argument to TestU01's Rabbit, Alphabit and BlockAlphabit batteries. Defaults to 52428800.")
+
 
     return parser.parse_args()
 
