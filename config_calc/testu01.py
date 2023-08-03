@@ -313,12 +313,12 @@ def crush(args, battery: str, file_size: int):
         else:
             result["defaults"]["test-ids"].append(test_id)
             
-        if repetitions > 1 or (is_irregular(battery, test_id) and repetitions != 0):
+        if repetitions > 1 or ((is_irregular(battery, test_id) or (battery == "crush" and test_id == 64)) and repetitions != 0):
             test = {
                 "test-id": test_id,
                 "repetitions": repetitions
             }
-    # crush 64 is treated separately - it has low variation in consumed data 
+    # crush 64 is treated separately - it has low variance in consumed data 
             if is_irregular(battery, test_id) or (battery == "crush" and test_id == 64):
                 test["comment"] = "WARNING - this test reads irregular ammount of bytes."
             result["test-specific-settings"].append(test)
