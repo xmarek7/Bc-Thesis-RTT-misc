@@ -12,6 +12,40 @@ BYTES_PER_PSAMPLE = {  0:   153600,    1: 4000020,     2: 5120000,     3: 240000
 
 NTUPLES = {200: (1, 12), 201: (2, 5), 202: (2,5), 203: (0,32)}
 
+TEST_NAMES = {
+    0: "Dieharder Diehard Birthdays Test",
+    1: "Dieharder Diehard OPERM5 Test",
+    2: "Dieharder Diehard 32x32 Binary Rank Test",
+    3: "Dieharder Diehard 6x8 Binary Rank Test",
+    4: "Dieharder Diehard Bitstream Test",
+    5: "Dieharder Diehard OPSO",
+    6: "Dieharder Diehard OQSO Test",
+    7: "Dieharder Diehard DNA Test",
+    8: "Dieharder Diehard Count the 1s (stream) Test",
+    9: "Dieharder Diehard Count the 1s Test (byte)",
+    10: "Dieharder Diehard Parking Lot Test",
+    11: "Dieharder Diehard Minimum Distance (2d Circle) Test",
+    12: "Dieharder Diehard 3d Sphere (Minimum Distance) Test",
+    13: "Dieharder Diehard Squeeze Test",
+    14: "Dieharder Diehard Sums Test",
+    15: "Dieharder Diehard Runs Test",
+    16: "Dieharder Diehard Craps Test",
+    17: "Dieharder Marsaglia and Tsang GCD Test",
+    100: "Dieharder STS Monobit Test",
+    101: "Dieharder STS Runs Test",
+    102: "Dieharder STS Serial Test (Generalized)",
+    200: "Dieharder RGB Bit Distribution Test",
+    201: "Dieharder RGB Generalized Minimum Distance Test",
+    202: "Dieharder RGB Permutations Test",
+    203: "Dieharder RGB Lagged Sum Test",
+    204: "Dieharder RGB Kolmogorov-Smirnov Test",
+    205: "Dieharder Byte Distribution",
+    206: "Dieharder DAB DCT",
+    207: "Dieharder DAB Fill Tree Test",
+    208: "Dieharder DAB Fill Tree Test 2",
+    209: "Dieharder DAB Monobit 2 Test",
+}
+
 TEST_IDS = [0, 1, 2, 3, 4, 8, 9, 10, 11, 12, 13, 15, 16, 17, 100, 101, 102, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209]
 
 def get_bytes_per_psample(args, test_id: int, ntup: Optional[int]) -> Optional[int]:
@@ -109,6 +143,7 @@ def dieharder_defaults(args):
                 "test-specific-defaults": []}
     for test_id in TEST_IDS:
         test = {"test-id": test_id,
+                "test-name": TEST_NAMES[test_id],
                 "psamples": 100}
         
         if test_id in {200, 201, 202, 203}:
