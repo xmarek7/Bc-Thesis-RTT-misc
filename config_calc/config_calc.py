@@ -19,8 +19,10 @@ def create_json(args, json_file, file_size: int):
             "dieharder-defaults": dieharder.dieharder_defaults(args),
 
             "nist-sts-settings": nist_sts.nist_sts_test(args, file_size),
+            "nist-sts-defaults": nist_sts.nist_sts_defaults(args),
 
             "tu01-rabbit-settings": testu01.rabbit(args, file_size), 
+            "tu01-rabbit-default": testu01.rabbit_defaults(args),
             
             "tu01-smallcrush-settings": testu01.crush(args, "small_crush", file_size),
             "tu01-smallcrush-defaults": testu01.crush_defaults(args, "small_crush"),
@@ -29,7 +31,10 @@ def create_json(args, json_file, file_size: int):
             "tu01-crush-defaults": testu01.crush_defaults(args, "crush"),
             
             "tu01-alphabit-settings": testu01.alphabit(args, file_size),
-            "tu01-blockalphabit-settings": testu01.block_alphabit(args, file_size)
+            "tu01-alphabit-defaults": testu01.alphabit_defaults(args),
+
+            "tu01-blockalphabit-settings": testu01.block_alphabit(args, file_size),
+            "tu01-blockalphabit-defaults": testu01.block_alphabit_defaults(args),
         }
     }
     print(json.dumps(result, indent=4), file=json_file)
