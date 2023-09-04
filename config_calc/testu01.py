@@ -1,5 +1,74 @@
 from utilities import concacenate_test_ids
 
+ALPHABIT_TEST_NAMES = {
+    1: "TestU01 Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE",
+    2: "TestU01 Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE",
+    3: "TestU01 Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE",
+    4: "TestU01 Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE",
+    5: "TestU01 Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0",
+    6: "TestU01 Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0",
+    7: "TestU01 Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32",
+    8: "TestU01 Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64",
+    9: "TestU01 Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320",
+}
+
+BLOCK_ALPHABIT_TEST_NAMES = {
+    (1, 1): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=1",
+    (1, 2): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=2",
+    (1, 4): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=4",
+    (1, 8): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=8",
+    (1, 16): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=16",
+    (1, 32): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=32",
+    (2, 1): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=1",
+    (2, 2): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=2",
+    (2, 4): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=4",
+    (2, 8): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=8",
+    (2, 16): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=16",
+    (2, 32): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=32",
+    (3, 1): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=1",
+    (3, 2): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=2",
+    (3, 4): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=4",
+    (3, 8): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=8",
+    (3, 16): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=16",
+    (3, 32): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=32",
+    (4, 1): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=1",
+    (4, 2): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=2",
+    (4, 4): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=4",
+    (4, 8): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=8",
+    (4, 16): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=16",
+    (4, 32): "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=32",
+    (5, 1): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=1",
+    (5, 2): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=2",
+    (5, 4): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=4",
+    (5, 8): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=8",
+    (5, 16): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=16",
+    (5, 32): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=32",
+    (6, 1): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=1",
+    (6, 2): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=2",
+    (6, 4): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=4",
+    (6, 8): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=8",
+    (6, 16): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=16",
+    (6, 32): "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=32",
+    (7, 1): "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=1",
+    (7, 2): "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=2",
+    (7, 4): "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=4",
+    (7, 8): "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=8",
+    (7, 16): "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=16",
+    (7, 32): "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=32",
+    (8, 1): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=1",
+    (8, 2): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=2",
+    (8, 4): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=4",
+    (8, 8): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=8",
+    (8, 16): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=16",
+    (8, 32): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=32",
+    (9, 1): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=1",
+    (9, 2): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=2",
+    (9, 4): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=4",
+    (9, 8): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=8",
+    (9, 16): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=16",
+    (9, 32): "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=32",
+}
+
 CRUSH_BYTES_PER_REPETITION = {
     1: 2000000000,
     2: 1200000000,
@@ -142,6 +211,157 @@ RABBIT_BYTES_PER_REPETITION = {
     26:6552968,
 }
 
+RABBIT_TEST_NAMES = {
+    1: "TestU01 Rabbit smultin_MultinomialBitsOver|N=6|n=8738112|r=0|s=32|L=38|Sparse=TRUE",
+    2: "TestU01 Rabbit snpair_ClosePairsBitMatch|N=1|n=819200|r=0|t=2",
+    3: "TestU01 Rabbit snpair_ClosePairsBitMatch|N=1|n=409600|r=0|t=4",
+    4: "TestU01 Rabbit svaria_AppearanceSpacings|N=1|Q=1638400|K=1638400|r=0|s=30|L=15",
+    5: "TestU01 Rabbit scomp_LinearComp|N=1|n=24480|r=0|s=32",
+    6: "TestU01 Rabbit scomp_LempelZiv|N=1|n=33554432|r=0|s=32|k=25",
+    7: "TestU01 Rabbit sspectral_Fourier1|N=1|n=1048576|r=0|s=32|k=20",
+    8: "TestU01 Rabbit sspectral_Fourier3|N=12700|n=4096|r=0|s=32|k=12",
+    9: "TestU01 Rabbit sstring_LongestHeadRun|N=1|n=60|r=0|s=32|L=873792",
+    10: "TestU01 Rabbit sstring_PeriodsInStrings|N=1|n=1638400|r=0|s=31",
+    11: "TestU01 Rabbit sstring_HammingWeight|N=1|n=1638400|r=0|s=32|L=32",
+    12: "TestU01 Rabbit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32",
+    13: "TestU01 Rabbit sstring_HammingCorr|N=1|n=819200|r=0|s=32|L=64",
+    14: "TestU01 Rabbit sstring_HammingCorr|N=1|n=409600|r=0|s=32|L=128",
+    15: "TestU01 Rabbit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0",
+    16: "TestU01 Rabbit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0",
+    17: "TestU01 Rabbit sstring_HammingIndep|N=1|n=409600|r=0|s=32|L=64|d=0",
+    18: "TestU01 Rabbit sstring_AutoCor|N=1|n=52428737|r=0|s=32|d=1",
+    19: "TestU01 Rabbit sstring_AutoCor|N=1|n=52428738|r=0|s=32|d=2",
+    20: "TestU01 Rabbit sstring_Run|N=1|n=10485760|r=0|s=32",
+    21: "TestU01 Rabbit smarsa_MatrixRank|N=1|n=51200|r=0|s=32|L=32|k=32",
+    22: "TestU01 Rabbit smarsa_MatrixRank|N=1|n=512|r=0|s=32|L=320|k=320",
+    23: "TestU01 Rabbit smarsa_MatrixRank|N=1|n=50|r=0|s=32|L=1024|k=1024",
+    24: "TestU01 Rabbit swalk_RandomWalk1|N=1|n=409600|r=0|s=32|L0=128|L1=128",
+    25: "TestU01 Rabbit swalk_RandomWalk1|N=1|n=51200|r=0|s=32|L0=1024|L1=1024",
+    26: "TestU01 Rabbit swalk_RandomWalk1|N=1|n=5234|r=0|s=32|L0=10016|L1=10016",
+}
+
+CRUSH_TEST_NAMES = {
+    1: "TestU01 Small Crush smarsa_BirthdaySpacings|N=1|n=5000000|r=0|d=1073741824|t=2|p=1",
+    2: "TestU01 Small Crush sknuth_Collision|N=1|n=5000000|r=0|d=65536|t=2|Sparse=TRUE",
+    3: "TestU01 Small Crush sknuth_Gap|N=1|n=200000|r=22|Alpha=0|Beta=0.00390625",
+    4: "TestU01 Small Crush sknuth_SimpPoker|N=1|n=400000|r=24|d=64|k=64",
+    5: "TestU01 Small Crush sknuth_CouponCollector|N=1|n=500000|r=26|d=16",
+    6: "TestU01 Small Crush sknuth_MaxOft|N=1|n=2000000|r=0|d=100000|t=6",
+    7: "TestU01 Small Crush svaria_WeightDistrib|N=1|n=200000|r=27|k=256|Alpha=0|Beta=0.125",
+    8: "TestU01 Small Crush smarsa_MatrixRank|N=1|n=20000|r=20|s=10|L=60|k=60",
+    9: "TestU01 Small Crush sstring_HammingIndep|N=1|n=500000|r=20|s=10|L=300|d=0",
+    10: "TestU01 Small Crush swalk_RandomWalk1|N=1|n=1000000|r=0|s=30|L0=150|L1=150",
+    1: "TestU01 Crush smarsa_SerialOver|N=1|n=500000000|r=0|d=4096|t=2|Sparse=FALSE",
+    2: "TestU01 Crush smarsa_SerialOver|N=1|n=300000000|r=0|d=64|t=4|Sparse=FALSE",
+    3: "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=0|d=1048576|t=2|Sparse=TRUE",
+    4: "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=10|d=1048576|t=2|Sparse=TRUE",
+    5: "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=0|d=1024|t=4|Sparse=TRUE",
+    6: "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=20|d=1024|t=4|Sparse=TRUE",
+    7: "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=0|d=32|t=8|Sparse=TRUE",
+    8: "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=25|d=32|t=8|Sparse=TRUE",
+    9: "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=0|d=4|t=20|Sparse=TRUE",
+    10: "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=28|d=4|t=20|Sparse=TRUE",
+    11: "TestU01 Crush smarsa_BirthdaySpacings|N=5|n=20000000|r=0|d=2147483648|t=2|p=1",
+    12: "TestU01 Crush smarsa_BirthdaySpacings|N=5|n=20000000|r=0|d=2097152|t=3|p=1",
+    13: "TestU01 Crush smarsa_BirthdaySpacings|N=5|n=20000000|r=0|d=65536|t=4|p=1",
+    14: "TestU01 Crush smarsa_BirthdaySpacings|N=3|n=20000000|r=0|d=512|t=7|p=1",
+    15: "TestU01 Crush smarsa_BirthdaySpacings|N=3|n=20000000|r=7|d=512|t=7|p=1",
+    16: "TestU01 Crush smarsa_BirthdaySpacings|N=3|n=20000000|r=14|d=256|t=8|p=1",
+    17: "TestU01 Crush smarsa_BirthdaySpacings|N=3|n=20000000|r=22|d=256|t=8|p=1",
+    18: "TestU01 Crush snpair_ClosePairs|N=10|n=2000000|r=0|t=2|p=0|m=30|Torus=TRUE",
+    19: "TestU01 Crush snpair_ClosePairs|N=10|n=2000000|r=0|t=3|p=0|m=30|Torus=TRUE",
+    20: "TestU01 Crush snpair_ClosePairs|N=5|n=2000000|r=0|t=7|p=0|m=30|Torus=TRUE",
+    21: "TestU01 Crush snpair_ClosePairsBitMatch|N=4|n=4000000|r=0|t=2",
+    22: "TestU01 Crush snpair_ClosePairsBitMatch|N=2|n=4000000|r=0|t=4",
+    23: "TestU01 Crush sknuth_SimpPoker|N=1|n=40000000|r=0|d=16|k=16",
+    24: "TestU01 Crush sknuth_SimpPoker|N=1|n=40000000|r=26|d=16|k=16",
+    25: "TestU01 Crush sknuth_SimpPoker|N=1|n=10000000|r=0|d=64|k=64",
+    26: "TestU01 Crush sknuth_SimpPoker|N=1|n=10000000|r=24|d=64|k=64",
+    27: "TestU01 Crush sknuth_CouponCollector|N=1|n=40000000|r=0|d=4",
+    28: "TestU01 Crush sknuth_CouponCollector|N=1|n=40000000|r=28|d=4",
+    29: "TestU01 Crush sknuth_CouponCollector|N=1|n=10000000|r=0|d=16",
+    30: "TestU01 Crush sknuth_CouponCollector|N=1|n=10000000|r=26|d=16",
+    31: "TestU01 Crush sknuth_Gap|N=1|n=100000000|r=0|Alpha=0|Beta=0.125",
+    32: "TestU01 Crush sknuth_Gap|N=1|n=100000000|r=27|Alpha=0|Beta=0.125",
+    33: "TestU01 Crush sknuth_Gap|N=1|n=5000000|r=0|Alpha=0|Beta=0.00390625",
+    34: "TestU01 Crush sknuth_Gap|N=1|n=5000000|r=22|Alpha=0|Beta=0.00390625",
+    35: "TestU01 Crush sknuth_Run|N=1|n=500000000|r=0|Up=TRUE",
+    36: "TestU01 Crush sknuth_Run|N=1|n=500000000|r=15|Up=FALSE",
+    37: "TestU01 Crush sknuth_Permutation|N=1|n=50000000|r=0|t=10|Sparse=FALSE",
+    38: "TestU01 Crush sknuth_Permutation|N=1|n=50000000|r=15|t=10|Sparse=FALSE",
+    39: "TestU01 Crush sknuth_CollisionPermut|N=5|n=10000000|r=0|t=13|Sparse=TRUE",
+    40: "TestU01 Crush sknuth_CollisionPermut|N=5|n=10000000|r=15|t=13|Sparse=TRUE",
+    41: "TestU01 Crush sknuth_MaxOft|N=10|n=10000000|r=0|d=100000|t=5",
+    42: "TestU01 Crush sknuth_MaxOft|N=5|n=10000000|r=0|d=100000|t=10",
+    43: "TestU01 Crush sknuth_MaxOft|N=1|n=10000000|r=0|d=100000|t=20",
+    44: "TestU01 Crush sknuth_MaxOft|N=1|n=10000000|r=0|d=100000|t=30",
+    45: "TestU01 Crush svaria_SampleProd|N=1|n=10000000|r=0|t=10",
+    46: "TestU01 Crush svaria_SampleProd|N=1|n=10000000|r=0|t=30",
+    47: "TestU01 Crush svaria_SampleMean|N=10000000|n=20|r=0",
+    48: "TestU01 Crush svaria_SampleCorr|N=1|n=500000000|r=0|k=1",
+    49: "TestU01 Crush svaria_AppearanceSpacings|N=1|Q=10000000|K=400000000|r=0|s=30|L=15",
+    50: "TestU01 Crush svaria_AppearanceSpacings|N=1|Q=10000000|K=100000000|r=20|s=10|L=15",
+    51: "TestU01 Crush svaria_WeightDistrib|N=1|n=2000000|r=0|k=256|Alpha=0|Beta=0.125",
+    52: "TestU01 Crush svaria_WeightDistrib|N=1|n=2000000|r=8|k=256|Alpha=0|Beta=0.125",
+    53: "TestU01 Crush svaria_WeightDistrib|N=1|n=2000000|r=16|k=256|Alpha=0|Beta=0.125",
+    54: "TestU01 Crush svaria_WeightDistrib|N=1|n=2000000|r=24|k=256|Alpha=0|Beta=0.125",
+    55: "TestU01 Crush svaria_SumCollector|N=1|n=20000000|r=0|g=10",
+    56: "TestU01 Crush smarsa_MatrixRank|N=1|n=1000000|r=0|s=30|L=60|k=60",
+    57: "TestU01 Crush smarsa_MatrixRank|N=1|n=1000000|r=20|s=10|L=60|k=60",
+    58: "TestU01 Crush smarsa_MatrixRank|N=1|n=50000|r=0|s=30|L=300|k=300",
+    59: "TestU01 Crush smarsa_MatrixRank|N=1|n=50000|r=20|s=10|L=300|k=300",
+    60: "TestU01 Crush smarsa_MatrixRank|N=1|n=2000|r=0|s=30|L=1200|k=1200",
+    61: "TestU01 Crush smarsa_MatrixRank|N=1|n=2000|r=20|s=10|L=1200|k=1200",
+    62: "TestU01 Crush smarsa_Savir2|N=1|n=20000000|r=0|m=1048576|t=30",
+    63: "TestU01 Crush smarsa_GCD|N=1|n=100000000|r=0|s=30",
+    64: "TestU01 Crush smarsa_GCD|N=1|n=40000000|r=10|s=20",
+    65: "TestU01 Crush swalk_RandomWalk1|N=1|n=50000000|r=0|s=30|L0=90|L1=90",
+    66: "TestU01 Crush swalk_RandomWalk1|N=1|n=10000000|r=20|s=10|L0=90|L1=90",
+    67: "TestU01 Crush swalk_RandomWalk1|N=1|n=5000000|r=0|s=30|L0=1000|L1=1000",
+    68: "TestU01 Crush swalk_RandomWalk1|N=1|n=1000000|r=20|s=10|L0=1000|L1=1000",
+    69: "TestU01 Crush swalk_RandomWalk1|N=1|n=500000|r=0|s=30|L0=10000|L1=10000",
+    70: "TestU01 Crush swalk_RandomWalk1|N=1|n=100000|r=20|s=10|L0=10000|L1=10000",
+    71: "TestU01 Crush scomp_LinearComp|N=1|n=120000|r=0|s=1",
+    72: "TestU01 Crush scomp_LinearComp|N=1|n=120000|r=29|s=1",
+    73: "TestU01 Crush scomp_LempelZiv|N=10|n=33554432|r=0|s=30|k=25",
+    74: "TestU01 Crush sspectral_Fourier3|N=50000|n=16384|r=0|s=30|k=14",
+    75: "TestU01 Crush sspectral_Fourier3|N=50000|n=16384|r=20|s=10|k=14",
+    76: "TestU01 Crush sstring_LongestHeadRun|N=1|n=1000|r=0|s=30|L=10000020",
+    77: "TestU01 Crush sstring_LongestHeadRun|N=1|n=300|r=20|s=10|L=10000020",
+    78: "TestU01 Crush sstring_PeriodsInStrings|N=1|n=300000000|r=0|s=30",
+    79: "TestU01 Crush sstring_PeriodsInStrings|N=1|n=300000000|r=15|s=15",
+    80: "TestU01 Crush sstring_HammingWeight2|N=100|n=100000000|r=0|s=30|L=1000000",
+    81: "TestU01 Crush sstring_HammingWeight2|N=30|n=100000000|r=20|s=10|L=1000000",
+    82: "TestU01 Crush sstring_HammingCorr|N=1|n=500000000|r=0|s=30|L=30",
+    83: "TestU01 Crush sstring_HammingCorr|N=1|n=50000000|r=0|s=30|L=300",
+    84: "TestU01 Crush sstring_HammingCorr|N=1|n=10000000|r=0|s=30|L=1200",
+    85: "TestU01 Crush sstring_HammingIndep|N=1|n=300000000|r=0|s=30|L=30|d=0",
+    86: "TestU01 Crush sstring_HammingIndep|N=1|n=100000000|r=20|s=10|L=30|d=0",
+    87: "TestU01 Crush sstring_HammingIndep|N=1|n=30000000|r=0|s=30|L=300|d=0",
+    88: "TestU01 Crush sstring_HammingIndep|N=1|n=10000000|r=20|s=10|L=300|d=0",
+    89: "TestU01 Crush sstring_HammingIndep|N=1|n=10000000|r=0|s=30|L=1200|d=0",
+    90: "TestU01 Crush sstring_HammingIndep|N=1|n=1000000|r=20|s=10|L=1200|d=0",
+    91: "TestU01 Crush sstring_Run|N=1|n=1000000000|r=0|s=30",
+    92: "TestU01 Crush sstring_Run|N=1|n=1000000000|r=20|s=10",
+    93: "TestU01 Crush sstring_AutoCor|N=10|n=1000000021|r=0|s=30|d=1",
+    94: "TestU01 Crush sstring_AutoCor|N=5|n=1000000001|r=20|s=10|d=1",
+    95: "TestU01 Crush sstring_AutoCor|N=10|n=1000000020|r=0|s=30|d=30",
+    96: "TestU01 Crush sstring_AutoCor|N=5|n=1000000010|r=20|s=10|d=10",
+}
+
+SMALL_CRUSH_TEST_NAMES = {
+    1: "TestU01 Small Crush smarsa_BirthdaySpacings|N=1|n=5000000|r=0|d=1073741824|t=2|p=1",
+    2: "TestU01 Small Crush sknuth_Collision|N=1|n=5000000|r=0|d=65536|t=2|Sparse=TRUE",
+    3: "TestU01 Small Crush sknuth_Gap|N=1|n=200000|r=22|Alpha=0|Beta=0.00390625",
+    4: "TestU01 Small Crush sknuth_SimpPoker|N=1|n=400000|r=24|d=64|k=64",
+    5: "TestU01 Small Crush sknuth_CouponCollector|N=1|n=500000|r=26|d=16",
+    6: "TestU01 Small Crush sknuth_MaxOft|N=1|n=2000000|r=0|d=100000|t=6",
+    7: "TestU01 Small Crush svaria_WeightDistrib|N=1|n=200000|r=27|k=256|Alpha=0|Beta=0.125",
+    8: "TestU01 Small Crush smarsa_MatrixRank|N=1|n=20000|r=20|s=10|L=60|k=60",
+    9: "TestU01 Small Crush sstring_HammingIndep|N=1|n=500000|r=20|s=10|L=300|d=0",
+    10: "TestU01 Small Crush swalk_RandomWalk1|N=1|n=1000000|r=0|s=30|L0=150|L1=150",
+}
+
 
 CRUSH_PARAMS = {
     1: "--params 1 500000000 0 4096 2",
@@ -262,6 +482,16 @@ def get_params(battery: str, test_id: int,)  -> str:
         return SMALL_CRUSH_PARAMS[test_id]
     raise ValueError("Battery must be crush or small_crush.")
 
+def get_test_name(battery: str, test_id: int) -> str:
+    if battery == "crush":
+        return CRUSH_TEST_NAMES[test_id]
+    elif battery == "small_crush":
+        return SMALL_CRUSH_TEST_NAMES[test_id]
+    elif battery == "rabbit":
+        return RABBIT_TEST_NAMES[test_id]
+    elif battery == "alphabit":
+        return ALPHABIT_TEST_NAMES[test_id]
+    raise ValueError("Unknown battery!")
 
 def is_irregular(battery: str, test_id: int) -> bool:
     return (battery == "crush" and (27 <= test_id <= 34 or test_id in {55, 91, 92})) \
@@ -274,6 +504,8 @@ def get_bytes_per_repetition(args, battery: str, test_id: int) -> int:
         needed_bytes = CRUSH_BYTES_PER_REPETITION[test_id]
     elif battery == "small_crush":
         needed_bytes = SMALL_CRUSH_BYTES_PER_REPETITION[test_id]
+    elif battery == "rabbit":
+        needed_bytes = RABBIT_BYTES_PER_REPETITION[test_id] * 8
     else:
         raise ValueError("Uknown battery: {}".format(battery))
 
@@ -346,7 +578,7 @@ def rabbit(args, file_size: int):
             continue
         
         # TODO - changed bit_nb
-        repetitions = (file_size * 8 // get_bits_per_repetition(args, "rabbit", test_id)) + (1 if args.increased else 0)
+        repetitions = (file_size * 8 // get_bytes_per_repetition(args, "rabbit", test_id)) + (1 if args.increased else 0)
 
         if repetitions == 0:
             result["omitted-tests"].add(test_id)
@@ -369,6 +601,26 @@ def rabbit(args, file_size: int):
     return result
 
 
+def rabbit_defaults(args):
+    result = {
+        "defaults": {
+            "test-ids": ["1-26"],
+            "bit-nb": str(args.tu01_bit_nb) 
+        }, 
+        "test-specific-defaults": [],
+    }
+
+    for test_id in range(1, 27):
+        bytes_per_repetiton = get_bytes_per_repetition(args, "rabbit", test_id)
+        result["test-specific-defaults"].append({
+                "test-id": test_id,
+                "test-name": get_test_name("rabbit", test_id),
+                "bytes-per-repetiton": bytes_per_repetiton,
+                #"arguments:": get_params("rabbit", test_id)
+            })
+            
+    return result
+
 def alphabit(args, file_size: int):
     repetitions = (file_size * 8) // args.tu01_bit_nb
 
@@ -387,6 +639,26 @@ def alphabit(args, file_size: int):
         result["defaults"]["test-ids"] = []
         result["ommited-tests"]: ["1-9"]
 
+    return result
+
+def alphabit_defaults(args):
+    result = {
+        "defaults": {
+            "test-ids": ["1-9"],
+            "bit-nb": str(args.tu01_bit_nb),
+            "bit-r": "0",
+            "bit-s": "32"
+        }, 
+        "test-specific-defaults": [],
+    }
+
+    for test_id in range(1, 10):
+        result["test-specific-defaults"].append({
+                "test-id": test_id,
+                "test-name": get_test_name("alphabit", test_id),
+                "bytes-per-repetiton": str(args.tu01_bit_nb // 8),
+            })
+            
     return result
 
 
@@ -422,6 +694,34 @@ def block_alphabit(args, file_size: int):
     return result
 
 
+def block_alphabit_defaults(args):
+    defaults = {"test-ids": [
+                    "1-9"
+                ],
+                "repetitions": 819,
+                "bit-nb": "52428800",
+                "bit-r": "0",
+                "bit-s": "32",
+                "test-specific-defaults": []}
+    for test_id in range(1, 10):
+        test = {"test-id": test_id,
+                }
+        
+        test["variants"] = []
+        for bit_w in [1, 2, 4, 8, 16, 32]:
+            test["variants"].append({
+                "bit-w" : bit_w,
+                "test-name": BLOCK_ALPHABIT_TEST_NAMES[(test_id, bit_w)],
+                "bytes-per-repetition": str(args.tu01_bit_nb // 8)
+            })
+    
+        defaults["test-specific-defaults"].append(test)
+    return defaults
+
+
+
+
+
 def crush_defaults(args, battery: str):
     if battery not in {"crush", "small_crush"}:
         raise ValueError("Battery in crush must be either crush, or small_crush!")
@@ -437,10 +737,9 @@ def crush_defaults(args, battery: str):
         bytes_per_repetiton = get_bytes_per_repetition(args, battery, test_id)
         result["test-specific-defaults"].append({
                 "test-id": test_id,
+                "test-name": get_test_name(battery, test_id),
                 "bytes-per-repetiton": bytes_per_repetiton,
                 "arguments:": get_params(battery, test_id)
             })
             
-
-
     return result
