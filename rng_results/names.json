@@ -1,0 +1,2799 @@
+{
+    "options": [
+        "config_calc.py",
+        "-f",
+        "../../input/5GB.dat",
+        "-c",
+        "names.json"
+    ],
+    "randomness-testing-toolkit": {
+        "dieharder-settings": {
+            "defaults": {
+                "psamples": 100,
+                "test-ids": [
+                    "0-4",
+                    "8-13",
+                    "15-17",
+                    "100-102",
+                    "200-209"
+                ]
+            },
+            "test-specific-settings": [
+                {
+                    "test-id": 0,
+                    "psamples": 34952
+                },
+                {
+                    "test-id": 1,
+                    "psamples": 1342
+                },
+                {
+                    "test-id": 2,
+                    "psamples": 1048
+                },
+                {
+                    "test-id": 3,
+                    "psamples": 2236
+                },
+                {
+                    "test-id": 4,
+                    "psamples": 5119
+                },
+                {
+                    "test-id": 8,
+                    "psamples": 20971
+                },
+                {
+                    "test-id": 9,
+                    "psamples": 1048
+                },
+                {
+                    "test-id": 10,
+                    "psamples": 55924
+                },
+                {
+                    "test-id": 11,
+                    "psamples": 83886
+                },
+                {
+                    "test-id": 12,
+                    "psamples": 111848
+                },
+                {
+                    "test-id": 13,
+                    "psamples": 581,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 15,
+                    "psamples": 13421
+                },
+                {
+                    "test-id": 16,
+                    "psamples": 992,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 17,
+                    "psamples": 67
+                },
+                {
+                    "test-id": 100,
+                    "psamples": 13421
+                },
+                {
+                    "test-id": 101,
+                    "psamples": 13421
+                },
+                {
+                    "test-id": 102,
+                    "psamples": 13421
+                },
+                {
+                    "test-id": 200,
+                    "variants": [
+                        {
+                            "arguments": "-n 1",
+                            "psamples": 6710
+                        },
+                        {
+                            "arguments": "-n 2",
+                            "psamples": 3355
+                        },
+                        {
+                            "arguments": "-n 3",
+                            "psamples": 2236
+                        },
+                        {
+                            "arguments": "-n 4",
+                            "psamples": 1677
+                        },
+                        {
+                            "arguments": "-n 5",
+                            "psamples": 1342
+                        },
+                        {
+                            "arguments": "-n 6",
+                            "psamples": 1118
+                        },
+                        {
+                            "arguments": "-n 7",
+                            "psamples": 958
+                        },
+                        {
+                            "arguments": "-n 8",
+                            "psamples": 838
+                        },
+                        {
+                            "arguments": "-n 9",
+                            "psamples": 745
+                        },
+                        {
+                            "arguments": "-n 10",
+                            "psamples": 671
+                        },
+                        {
+                            "arguments": "-n 11",
+                            "psamples": 610
+                        },
+                        {
+                            "arguments": "-n 12",
+                            "psamples": 559
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 201,
+                    "variants": [
+                        {
+                            "arguments": "-n 2 -t 10000",
+                            "psamples": 67108
+                        },
+                        {
+                            "arguments": "-n 3 -t 10000",
+                            "psamples": 44739
+                        },
+                        {
+                            "arguments": "-n 4 -t 10000",
+                            "psamples": 33554
+                        },
+                        {
+                            "arguments": "-n 5 -t 10000",
+                            "psamples": 26843
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 202,
+                    "variants": [
+                        {
+                            "arguments": "-n 2",
+                            "psamples": 6710
+                        },
+                        {
+                            "arguments": "-n 3",
+                            "psamples": 4473
+                        },
+                        {
+                            "arguments": "-n 4",
+                            "psamples": 3355
+                        },
+                        {
+                            "arguments": "-n 5",
+                            "psamples": 2684
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 203,
+                    "variants": [
+                        {
+                            "arguments": "-n 0",
+                            "psamples": 1342
+                        },
+                        {
+                            "arguments": "-n 1",
+                            "psamples": 671
+                        },
+                        {
+                            "arguments": "-n 2",
+                            "psamples": 447
+                        },
+                        {
+                            "arguments": "-n 3",
+                            "psamples": 335
+                        },
+                        {
+                            "arguments": "-n 4",
+                            "psamples": 268
+                        },
+                        {
+                            "arguments": "-n 5",
+                            "psamples": 223
+                        },
+                        {
+                            "arguments": "-n 6",
+                            "psamples": 191
+                        },
+                        {
+                            "arguments": "-n 7",
+                            "psamples": 167
+                        },
+                        {
+                            "arguments": "-n 8",
+                            "psamples": 149
+                        },
+                        {
+                            "arguments": "-n 9",
+                            "psamples": 134
+                        },
+                        {
+                            "arguments": "-n 10",
+                            "psamples": 122
+                        },
+                        {
+                            "arguments": "-n 11",
+                            "psamples": 111
+                        },
+                        {
+                            "arguments": "-n 12",
+                            "psamples": 103
+                        },
+                        {
+                            "arguments": "-n 13",
+                            "psamples": 95
+                        },
+                        {
+                            "arguments": "-n 14",
+                            "psamples": 89
+                        },
+                        {
+                            "arguments": "-n 15",
+                            "psamples": 83
+                        },
+                        {
+                            "arguments": "-n 16",
+                            "psamples": 78
+                        },
+                        {
+                            "arguments": "-n 17",
+                            "psamples": 74
+                        },
+                        {
+                            "arguments": "-n 18",
+                            "psamples": 70
+                        },
+                        {
+                            "arguments": "-n 19",
+                            "psamples": 67
+                        },
+                        {
+                            "arguments": "-n 20",
+                            "psamples": 63
+                        },
+                        {
+                            "arguments": "-n 21",
+                            "psamples": 61
+                        },
+                        {
+                            "arguments": "-n 22",
+                            "psamples": 58
+                        },
+                        {
+                            "arguments": "-n 23",
+                            "psamples": 55
+                        },
+                        {
+                            "arguments": "-n 24",
+                            "psamples": 53
+                        },
+                        {
+                            "arguments": "-n 25",
+                            "psamples": 51
+                        },
+                        {
+                            "arguments": "-n 26",
+                            "psamples": 49
+                        },
+                        {
+                            "arguments": "-n 27",
+                            "psamples": 47
+                        },
+                        {
+                            "arguments": "-n 28",
+                            "psamples": 46
+                        },
+                        {
+                            "arguments": "-n 29",
+                            "psamples": 44
+                        },
+                        {
+                            "arguments": "-n 30",
+                            "psamples": 43
+                        },
+                        {
+                            "arguments": "-n 31",
+                            "psamples": 41
+                        },
+                        {
+                            "arguments": "-n 32",
+                            "psamples": 40
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 204,
+                    "psamples": 134217
+                },
+                {
+                    "test-id": 205,
+                    "psamples": 8
+                },
+                {
+                    "test-id": 206,
+                    "psamples": 104
+                },
+                {
+                    "test-id": 207,
+                    "psamples": 11,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 208,
+                    "psamples": 45,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 209,
+                    "psamples": 20
+                }
+            ],
+            "omitted-tests": []
+        },
+        "dieharder-defaults": {
+            "test-ids": [
+                "0-4",
+                "8-13",
+                "15-17",
+                "100-102",
+                "200-209"
+            ],
+            "test-specific-defaults": [
+                {
+                    "test-id": 0,
+                    "test-name": "Dieharder Diehard Birthdays Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 153600
+                },
+                {
+                    "test-id": 1,
+                    "test-name": "Dieharder Diehard OPERM5 Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 4000020
+                },
+                {
+                    "test-id": 2,
+                    "test-name": "Dieharder Diehard 32x32 Binary Rank Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 5120000
+                },
+                {
+                    "test-id": 3,
+                    "test-name": "Dieharder Diehard 6x8 Binary Rank Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 2400000
+                },
+                {
+                    "test-id": 4,
+                    "test-name": "Dieharder Diehard Bitstream Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 1048583
+                },
+                {
+                    "test-id": 8,
+                    "test-name": "Dieharder Diehard Count the 1s (stream) Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 256004
+                },
+                {
+                    "test-id": 9,
+                    "test-name": "Dieharder Diehard Count the 1s Test (byte)",
+                    "psamples": 100,
+                    "bytes-per-psample": 5120000
+                },
+                {
+                    "test-id": 10,
+                    "test-name": "Dieharder Diehard Parking Lot Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 96000
+                },
+                {
+                    "test-id": 11,
+                    "test-name": "Dieharder Diehard Minimum Distance (2d Circle) Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 64000
+                },
+                {
+                    "test-id": 12,
+                    "test-name": "Dieharder Diehard 3d Sphere (Minimum Distance) Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 48000
+                },
+                {
+                    "test-id": 13,
+                    "test-name": "Dieharder Diehard Squeeze Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 9234747
+                },
+                {
+                    "test-id": 15,
+                    "test-name": "Dieharder Diehard Runs Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 400000
+                },
+                {
+                    "test-id": 16,
+                    "test-name": "Dieharder Diehard Craps Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 5407738
+                },
+                {
+                    "test-id": 17,
+                    "test-name": "Dieharder Marsaglia and Tsang GCD Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 80000000
+                },
+                {
+                    "test-id": 100,
+                    "test-name": "Dieharder STS Monobit Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 400000
+                },
+                {
+                    "test-id": 101,
+                    "test-name": "Dieharder STS Runs Test",
+                    "psamples": 100,
+                    "bytes-per-psample": 400000
+                },
+                {
+                    "test-id": 102,
+                    "test-name": "Dieharder STS Serial Test (Generalized)",
+                    "psamples": 100,
+                    "bytes-per-psample": 400000
+                },
+                {
+                    "test-id": 200,
+                    "test-name": "Dieharder RGB Bit Distribution Test",
+                    "psamples": 100,
+                    "ntup-range": "1 - 12",
+                    "variants": [
+                        {
+                            "ntup": 1,
+                            "bytes-per-psample": 800004
+                        },
+                        {
+                            "ntup": 2,
+                            "bytes-per-psample": 1600004
+                        },
+                        {
+                            "ntup": 3,
+                            "bytes-per-psample": 2400004
+                        },
+                        {
+                            "ntup": 4,
+                            "bytes-per-psample": 3200004
+                        },
+                        {
+                            "ntup": 5,
+                            "bytes-per-psample": 4000004
+                        },
+                        {
+                            "ntup": 6,
+                            "bytes-per-psample": 4800004
+                        },
+                        {
+                            "ntup": 7,
+                            "bytes-per-psample": 5600004
+                        },
+                        {
+                            "ntup": 8,
+                            "bytes-per-psample": 6400004
+                        },
+                        {
+                            "ntup": 9,
+                            "bytes-per-psample": 7200004
+                        },
+                        {
+                            "ntup": 10,
+                            "bytes-per-psample": 8000004
+                        },
+                        {
+                            "ntup": 11,
+                            "bytes-per-psample": 8800004
+                        },
+                        {
+                            "ntup": 12,
+                            "bytes-per-psample": 9600004
+                        }
+                    ]
+                },
+                {
+                    "test-id": 201,
+                    "test-name": "Dieharder RGB Generalized Minimum Distance Test",
+                    "psamples": 1000,
+                    "ntup-range": "2 - 5",
+                    "variants": [
+                        {
+                            "ntup": 2,
+                            "bytes-per-psample": 80000
+                        },
+                        {
+                            "ntup": 3,
+                            "bytes-per-psample": 120000
+                        },
+                        {
+                            "ntup": 4,
+                            "bytes-per-psample": 160000
+                        },
+                        {
+                            "ntup": 5,
+                            "bytes-per-psample": 200000
+                        }
+                    ]
+                },
+                {
+                    "test-id": 202,
+                    "test-name": "Dieharder RGB Permutations Test",
+                    "psamples": 100,
+                    "ntup-range": "2 - 5",
+                    "variants": [
+                        {
+                            "ntup": 2,
+                            "bytes-per-psample": 800000
+                        },
+                        {
+                            "ntup": 3,
+                            "bytes-per-psample": 1200000
+                        },
+                        {
+                            "ntup": 4,
+                            "bytes-per-psample": 1600000
+                        },
+                        {
+                            "ntup": 5,
+                            "bytes-per-psample": 2000000
+                        }
+                    ]
+                },
+                {
+                    "test-id": 203,
+                    "test-name": "Dieharder RGB Lagged Sum Test",
+                    "psamples": 100,
+                    "ntup-range": "0 - 32",
+                    "variants": [
+                        {
+                            "ntup": 0,
+                            "bytes-per-psample": 4000000
+                        },
+                        {
+                            "ntup": 1,
+                            "bytes-per-psample": 8000000
+                        },
+                        {
+                            "ntup": 2,
+                            "bytes-per-psample": 12000000
+                        },
+                        {
+                            "ntup": 3,
+                            "bytes-per-psample": 16000000
+                        },
+                        {
+                            "ntup": 4,
+                            "bytes-per-psample": 20000000
+                        },
+                        {
+                            "ntup": 5,
+                            "bytes-per-psample": 24000000
+                        },
+                        {
+                            "ntup": 6,
+                            "bytes-per-psample": 28000000
+                        },
+                        {
+                            "ntup": 7,
+                            "bytes-per-psample": 32000000
+                        },
+                        {
+                            "ntup": 8,
+                            "bytes-per-psample": 36000000
+                        },
+                        {
+                            "ntup": 9,
+                            "bytes-per-psample": 40000000
+                        },
+                        {
+                            "ntup": 10,
+                            "bytes-per-psample": 44000000
+                        },
+                        {
+                            "ntup": 11,
+                            "bytes-per-psample": 48000000
+                        },
+                        {
+                            "ntup": 12,
+                            "bytes-per-psample": 52000000
+                        },
+                        {
+                            "ntup": 13,
+                            "bytes-per-psample": 56000000
+                        },
+                        {
+                            "ntup": 14,
+                            "bytes-per-psample": 60000000
+                        },
+                        {
+                            "ntup": 15,
+                            "bytes-per-psample": 64000000
+                        },
+                        {
+                            "ntup": 16,
+                            "bytes-per-psample": 68000000
+                        },
+                        {
+                            "ntup": 17,
+                            "bytes-per-psample": 72000000
+                        },
+                        {
+                            "ntup": 18,
+                            "bytes-per-psample": 76000000
+                        },
+                        {
+                            "ntup": 19,
+                            "bytes-per-psample": 80000000
+                        },
+                        {
+                            "ntup": 20,
+                            "bytes-per-psample": 84000000
+                        },
+                        {
+                            "ntup": 21,
+                            "bytes-per-psample": 88000000
+                        },
+                        {
+                            "ntup": 22,
+                            "bytes-per-psample": 92000000
+                        },
+                        {
+                            "ntup": 23,
+                            "bytes-per-psample": 96000000
+                        },
+                        {
+                            "ntup": 24,
+                            "bytes-per-psample": 100000000
+                        },
+                        {
+                            "ntup": 25,
+                            "bytes-per-psample": 104000000
+                        },
+                        {
+                            "ntup": 26,
+                            "bytes-per-psample": 108000000
+                        },
+                        {
+                            "ntup": 27,
+                            "bytes-per-psample": 112000000
+                        },
+                        {
+                            "ntup": 28,
+                            "bytes-per-psample": 116000000
+                        },
+                        {
+                            "ntup": 29,
+                            "bytes-per-psample": 120000000
+                        },
+                        {
+                            "ntup": 30,
+                            "bytes-per-psample": 124000000
+                        },
+                        {
+                            "ntup": 31,
+                            "bytes-per-psample": 128000000
+                        },
+                        {
+                            "ntup": 32,
+                            "bytes-per-psample": 132000000
+                        }
+                    ]
+                },
+                {
+                    "test-id": 204,
+                    "test-name": "Dieharder RGB Kolmogorov-Smirnov Test",
+                    "psamples": 1000,
+                    "bytes-per-psample": 40000
+                },
+                {
+                    "test-id": 205,
+                    "test-name": "Dieharder Byte Distribution",
+                    "psamples": 1,
+                    "bytes-per-psample": 614400000
+                },
+                {
+                    "test-id": 206,
+                    "test-name": "Dieharder DAB DCT",
+                    "psamples": 1,
+                    "bytes-per-psample": 51200000
+                },
+                {
+                    "test-id": 207,
+                    "test-name": "Dieharder DAB Fill Tree Test",
+                    "psamples": 1,
+                    "bytes-per-psample": 452468430
+                },
+                {
+                    "test-id": 208,
+                    "test-name": "Dieharder DAB Fill Tree Test 2",
+                    "psamples": 1,
+                    "bytes-per-psample": 116998399
+                },
+                {
+                    "test-id": 209,
+                    "test-name": "Dieharder DAB Monobit 2 Test",
+                    "psamples": 1,
+                    "bytes-per-psample": 260000000
+                }
+            ]
+        },
+        "nist-sts-settings": {
+            "defaults": {
+                "test-ids": [
+                    "1-15"
+                ],
+                "stream-size": "1000000",
+                "stream-count": "42949"
+            },
+            "test-specific-settings": []
+        },
+        "nist-sts-defaults": {
+            "test-ids": [
+                "1-15"
+            ],
+            "test-specific-defaults": [
+                {
+                    "test-id": 1,
+                    "test-name": "NIST Statistical Testing Suite Frequency (monobits) test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 2,
+                    "test-name": "NIST Statistical Testing Suite Test For Frequency Within A Block",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 3,
+                    "test-name": "NIST Statistical Testing Suite Cumulative Sum (Cusum) Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 4,
+                    "test-name": "NIST Statistical Testing Suite Runs Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 5,
+                    "test-name": "NIST Statistical Testing Suite Test for the Longest Run of Ones in a Block",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 6,
+                    "test-name": "NIST Statistical Testing Suite Random Binary Matrix Rank Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 7,
+                    "test-name": "NIST Statistical Testing Suite Discrete Fourier Transform (Spectral) Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 8,
+                    "test-name": "NIST Statistical Testing Suite Non-overlapping (Aperiodic) Template Matching Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 9,
+                    "test-name": "NIST Statistical Testing Suite Overlapping (Periodic) Template Matching Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 10,
+                    "test-name": "NIST Statistical Testing Suite Maurer's Universal Statistical Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 11,
+                    "test-name": "NIST Statistical Testing Suite Approximate Entropy Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 12,
+                    "test-name": "NIST Statistical Testing Suite Random Excursions Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 13,
+                    "test-name": "NIST Statistical Testing Suite Random Excursions Variant Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 14,
+                    "test-name": "NIST Statistical Testing Suite Serial Test",
+                    "bytes-per-stream": "125000"
+                },
+                {
+                    "test-id": 15,
+                    "test-name": "NIST Statistical Testing Suite Linear Complexity Test",
+                    "bytes-per-stream": "125000"
+                }
+            ]
+        },
+        "tu01-rabbit-settings": {
+            "defaults": {
+                "test-ids": [
+                    "1-4",
+                    "6-26"
+                ],
+                "repetitions": 819,
+                "bit-nb": "52428800"
+            },
+            "test-specific-settings": [
+                {
+                    "test-id": 6,
+                    "repetitions": 1280
+                },
+                {
+                    "test-id": 7,
+                    "repetitions": 40960
+                },
+                {
+                    "test-id": 20,
+                    "repetitions": 1013,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                }
+            ],
+            "omitted-tests": [
+                "5"
+            ]
+        },
+        "tu01-rabbit-default": {
+            "defaults": {
+                "test-ids": [
+                    "1-26"
+                ],
+                "bit-nb": "52428800"
+            },
+            "test-specific-defaults": [
+                {
+                    "test-id": 1,
+                    "test-name": "TestU01 Rabbit smultin_MultinomialBitsOver|N=6|n=8738112|r=0|s=32|L=38|Sparse=TRUE",
+                    "bytes-per-repetiton": 52428672
+                },
+                {
+                    "test-id": 2,
+                    "test-name": "TestU01 Rabbit snpair_ClosePairsBitMatch|N=1|n=819200|r=0|t=2",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 3,
+                    "test-name": "TestU01 Rabbit snpair_ClosePairsBitMatch|N=1|n=409600|r=0|t=4",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 4,
+                    "test-name": "TestU01 Rabbit svaria_AppearanceSpacings|N=1|Q=1638400|K=1638400|r=0|s=30|L=15",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 5,
+                    "test-name": "TestU01 Rabbit scomp_LinearComp|N=1|n=24480|r=0|s=32",
+                    "bytes-per-repetiton": 24480
+                },
+                {
+                    "test-id": 6,
+                    "test-name": "TestU01 Rabbit scomp_LempelZiv|N=1|n=33554432|r=0|s=32|k=25",
+                    "bytes-per-repetiton": 33554432
+                },
+                {
+                    "test-id": 7,
+                    "test-name": "TestU01 Rabbit sspectral_Fourier1|N=1|n=1048576|r=0|s=32|k=20",
+                    "bytes-per-repetiton": 1048576
+                },
+                {
+                    "test-id": 8,
+                    "test-name": "TestU01 Rabbit sspectral_Fourier3|N=12700|n=4096|r=0|s=32|k=12",
+                    "bytes-per-repetiton": 52425600
+                },
+                {
+                    "test-id": 9,
+                    "test-name": "TestU01 Rabbit sstring_LongestHeadRun|N=1|n=60|r=0|s=32|L=873792",
+                    "bytes-per-repetiton": 52427520
+                },
+                {
+                    "test-id": 10,
+                    "test-name": "TestU01 Rabbit sstring_PeriodsInStrings|N=1|n=1638400|r=0|s=31",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 11,
+                    "test-name": "TestU01 Rabbit sstring_HammingWeight|N=1|n=1638400|r=0|s=32|L=32",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 12,
+                    "test-name": "TestU01 Rabbit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 13,
+                    "test-name": "TestU01 Rabbit sstring_HammingCorr|N=1|n=819200|r=0|s=32|L=64",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 14,
+                    "test-name": "TestU01 Rabbit sstring_HammingCorr|N=1|n=409600|r=0|s=32|L=128",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 15,
+                    "test-name": "TestU01 Rabbit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 16,
+                    "test-name": "TestU01 Rabbit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 17,
+                    "test-name": "TestU01 Rabbit sstring_HammingIndep|N=1|n=409600|r=0|s=32|L=64|d=0",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 18,
+                    "test-name": "TestU01 Rabbit sstring_AutoCor|N=1|n=52428737|r=0|s=32|d=1",
+                    "bytes-per-repetiton": 52428768
+                },
+                {
+                    "test-id": 19,
+                    "test-name": "TestU01 Rabbit sstring_AutoCor|N=1|n=52428738|r=0|s=32|d=2",
+                    "bytes-per-repetiton": 52428768
+                },
+                {
+                    "test-id": 20,
+                    "test-name": "TestU01 Rabbit sstring_Run|N=1|n=10485760|r=0|s=32",
+                    "bytes-per-repetiton": 42384997
+                },
+                {
+                    "test-id": 21,
+                    "test-name": "TestU01 Rabbit smarsa_MatrixRank|N=1|n=51200|r=0|s=32|L=32|k=32",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 22,
+                    "test-name": "TestU01 Rabbit smarsa_MatrixRank|N=1|n=512|r=0|s=32|L=320|k=320",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 23,
+                    "test-name": "TestU01 Rabbit smarsa_MatrixRank|N=1|n=50|r=0|s=32|L=1024|k=1024",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 24,
+                    "test-name": "TestU01 Rabbit swalk_RandomWalk1|N=1|n=409600|r=0|s=32|L0=128|L1=128",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 25,
+                    "test-name": "TestU01 Rabbit swalk_RandomWalk1|N=1|n=51200|r=0|s=32|L0=1024|L1=1024",
+                    "bytes-per-repetiton": 52428800
+                },
+                {
+                    "test-id": 26,
+                    "test-name": "TestU01 Rabbit swalk_RandomWalk1|N=1|n=5234|r=0|s=32|L0=10016|L1=10016",
+                    "bytes-per-repetiton": 52423744
+                }
+            ]
+        },
+        "tu01-smallcrush-settings": {
+            "defaults": {
+                "test-ids": [
+                    "1-10"
+                ],
+                "repetitions": 1
+            },
+            "test-specific-settings": [
+                {
+                    "test-id": 1,
+                    "repetitions": 134
+                },
+                {
+                    "test-id": 2,
+                    "repetitions": 134
+                },
+                {
+                    "test-id": 3,
+                    "repetitions": 25,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 4,
+                    "repetitions": 52
+                },
+                {
+                    "test-id": 5,
+                    "repetitions": 53,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 6,
+                    "repetitions": 111
+                },
+                {
+                    "test-id": 7,
+                    "repetitions": 26
+                },
+                {
+                    "test-id": 8,
+                    "repetitions": 186
+                },
+                {
+                    "test-id": 9,
+                    "repetitions": 44
+                },
+                {
+                    "test-id": 10,
+                    "repetitions": 268
+                }
+            ],
+            "omitted-tests": []
+        },
+        "tu01-smallcrush-defaults": {
+            "defaults": {
+                "test-ids": [
+                    "1-10"
+                ]
+            },
+            "test-specific-defaults": [
+                {
+                    "test-id": 1,
+                    "test-name": "TestU01 Small Crush smarsa_BirthdaySpacings|N=1|n=5000000|r=0|d=1073741824|t=2|p=1",
+                    "bytes-per-repetiton": 40000000,
+                    "arguments:": "--params 1 5000000  0 1073741824 2 1"
+                },
+                {
+                    "test-id": 2,
+                    "test-name": "TestU01 Small Crush sknuth_Collision|N=1|n=5000000|r=0|d=65536|t=2|Sparse=TRUE",
+                    "bytes-per-repetiton": 40000000,
+                    "arguments:": "--params 1 5000000  0 65536 2"
+                },
+                {
+                    "test-id": 3,
+                    "test-name": "TestU01 Small Crush sknuth_Gap|N=1|n=200000|r=22|Alpha=0|Beta=0.00390625",
+                    "bytes-per-repetiton": 207182431,
+                    "arguments:": "--params 1  200000 22 0.0 0.00390625"
+                },
+                {
+                    "test-id": 4,
+                    "test-name": "TestU01 Small Crush sknuth_SimpPoker|N=1|n=400000|r=24|d=64|k=64",
+                    "bytes-per-repetiton": 102400000,
+                    "arguments:": "--params 1  400000 24 64 64"
+                },
+                {
+                    "test-id": 5,
+                    "test-name": "TestU01 Small Crush sknuth_CouponCollector|N=1|n=500000|r=26|d=16",
+                    "bytes-per-repetiton": 99723355,
+                    "arguments:": "--params 1  500000 26 16"
+                },
+                {
+                    "test-id": 6,
+                    "test-name": "TestU01 Small Crush sknuth_MaxOft|N=1|n=2000000|r=0|d=100000|t=6",
+                    "bytes-per-repetiton": 48000000,
+                    "arguments:": "--params 1 2000000  0 100000 6"
+                },
+                {
+                    "test-id": 7,
+                    "test-name": "TestU01 Small Crush svaria_WeightDistrib|N=1|n=200000|r=27|k=256|Alpha=0|Beta=0.125",
+                    "bytes-per-repetiton": 204800000,
+                    "arguments:": "--params 1  200000 27 256 0.0 0.125"
+                },
+                {
+                    "test-id": 8,
+                    "test-name": "TestU01 Small Crush smarsa_MatrixRank|N=1|n=20000|r=20|s=10|L=60|k=60",
+                    "bytes-per-repetiton": 28800000,
+                    "arguments:": "--params 1   20000 20 10 60 60"
+                },
+                {
+                    "test-id": 9,
+                    "test-name": "TestU01 Small Crush sstring_HammingIndep|N=1|n=500000|r=20|s=10|L=300|d=0",
+                    "bytes-per-repetiton": 120000000,
+                    "arguments:": "--params 1  500000 20 10 300 0"
+                },
+                {
+                    "test-id": 10,
+                    "test-name": "TestU01 Small Crush swalk_RandomWalk1|N=1|n=1000000|r=0|s=30|L0=150|L1=150",
+                    "bytes-per-repetiton": 20000000,
+                    "arguments:": "--params 1 1000000  0 30 150 150"
+                }
+            ]
+        },
+        "tu01-crush-settings": {
+            "defaults": {
+                "test-ids": [
+                    "1-96"
+                ],
+                "repetitions": 1
+            },
+            "test-specific-settings": [
+                {
+                    "test-id": 1,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 2,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 3,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 4,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 5,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 6,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 7,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 8,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 9,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 10,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 11,
+                    "repetitions": 6
+                },
+                {
+                    "test-id": 12,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 13,
+                    "repetitions": 3
+                },
+                {
+                    "test-id": 14,
+                    "repetitions": 3
+                },
+                {
+                    "test-id": 15,
+                    "repetitions": 3
+                },
+                {
+                    "test-id": 16,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 17,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 18,
+                    "repetitions": 33
+                },
+                {
+                    "test-id": 19,
+                    "repetitions": 22
+                },
+                {
+                    "test-id": 20,
+                    "repetitions": 19
+                },
+                {
+                    "test-id": 21,
+                    "repetitions": 41
+                },
+                {
+                    "test-id": 22,
+                    "repetitions": 41
+                },
+                {
+                    "test-id": 23,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 24,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 25,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 26,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 27,
+                    "repetitions": 3,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 28,
+                    "repetitions": 3,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 29,
+                    "repetitions": 2,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 30,
+                    "repetitions": 2,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 31,
+                    "repetitions": 1,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 32,
+                    "repetitions": 1,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 33,
+                    "repetitions": 1,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 34,
+                    "repetitions": 1,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 35,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 36,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 37,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 38,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 39,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 40,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 41,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 42,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 43,
+                    "repetitions": 6
+                },
+                {
+                    "test-id": 44,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 45,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 46,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 47,
+                    "repetitions": 6
+                },
+                {
+                    "test-id": 48,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 49,
+                    "repetitions": 6
+                },
+                {
+                    "test-id": 50,
+                    "repetitions": 6
+                },
+                {
+                    "test-id": 51,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 52,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 53,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 54,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 55,
+                    "repetitions": 3,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 56,
+                    "repetitions": 11
+                },
+                {
+                    "test-id": 57,
+                    "repetitions": 3
+                },
+                {
+                    "test-id": 58,
+                    "repetitions": 8
+                },
+                {
+                    "test-id": 59,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 60,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 61,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 62,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 63,
+                    "repetitions": 6
+                },
+                {
+                    "test-id": 64,
+                    "repetitions": 16,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 65,
+                    "repetitions": 8
+                },
+                {
+                    "test-id": 66,
+                    "repetitions": 14
+                },
+                {
+                    "test-id": 67,
+                    "repetitions": 7
+                },
+                {
+                    "test-id": 68,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 69,
+                    "repetitions": 8
+                },
+                {
+                    "test-id": 70,
+                    "repetitions": 13
+                },
+                {
+                    "test-id": 71,
+                    "repetitions": 11184
+                },
+                {
+                    "test-id": 72,
+                    "repetitions": 11184
+                },
+                {
+                    "test-id": 73,
+                    "repetitions": 119
+                },
+                {
+                    "test-id": 74,
+                    "repetitions": 49
+                },
+                {
+                    "test-id": 75,
+                    "repetitions": 16
+                },
+                {
+                    "test-id": 76,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 77,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 78,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 79,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 80,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 81,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 82,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 83,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 84,
+                    "repetitions": 3
+                },
+                {
+                    "test-id": 85,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 86,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 87,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 88,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 90,
+                    "repetitions": 5
+                },
+                {
+                    "test-id": 91,
+                    "repetitions": 9,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 92,
+                    "repetitions": 3,
+                    "comment": "WARNING - this test reads irregular ammount of bytes."
+                },
+                {
+                    "test-id": 93,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 94,
+                    "repetitions": 2
+                },
+                {
+                    "test-id": 95,
+                    "repetitions": 4
+                },
+                {
+                    "test-id": 96,
+                    "repetitions": 2
+                }
+            ],
+            "omitted-tests": []
+        },
+        "tu01-crush-defaults": {
+            "defaults": {
+                "test-ids": [
+                    "1-96"
+                ]
+            },
+            "test-specific-defaults": [
+                {
+                    "test-id": 1,
+                    "test-name": "TestU01 Crush smarsa_SerialOver|N=1|n=500000000|r=0|d=4096|t=2|Sparse=FALSE",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 1 500000000 0 4096 2"
+                },
+                {
+                    "test-id": 2,
+                    "test-name": "TestU01 Crush smarsa_SerialOver|N=1|n=300000000|r=0|d=64|t=4|Sparse=FALSE",
+                    "bytes-per-repetiton": 1200000000,
+                    "arguments:": "--params 1 300000000 0 64 4"
+                },
+                {
+                    "test-id": 3,
+                    "test-name": "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=0|d=1048576|t=2|Sparse=TRUE",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 10 10000000 0 1048576 2"
+                },
+                {
+                    "test-id": 4,
+                    "test-name": "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=10|d=1048576|t=2|Sparse=TRUE",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 10 10000000 10 1048576 2"
+                },
+                {
+                    "test-id": 5,
+                    "test-name": "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=0|d=1024|t=4|Sparse=TRUE",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 10 10000000 0 1024 4"
+                },
+                {
+                    "test-id": 6,
+                    "test-name": "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=20|d=1024|t=4|Sparse=TRUE",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 10 10000000 20 1024 4"
+                },
+                {
+                    "test-id": 7,
+                    "test-name": "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=0|d=32|t=8|Sparse=TRUE",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 10 10000000 0 32 8"
+                },
+                {
+                    "test-id": 8,
+                    "test-name": "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=25|d=32|t=8|Sparse=TRUE",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 10 10000000 25 32 8"
+                },
+                {
+                    "test-id": 9,
+                    "test-name": "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=0|d=4|t=20|Sparse=TRUE",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 10 10000000 0 4 20"
+                },
+                {
+                    "test-id": 10,
+                    "test-name": "TestU01 Crush smarsa_CollisionOver|N=10|n=10000000|r=28|d=4|t=20|Sparse=TRUE",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 10 10000000 28 4 20"
+                },
+                {
+                    "test-id": 11,
+                    "test-name": "TestU01 Crush smarsa_BirthdaySpacings|N=5|n=20000000|r=0|d=2147483648|t=2|p=1",
+                    "bytes-per-repetiton": 800000000,
+                    "arguments:": "--params 5 20000000 0 2147483648 2 1"
+                },
+                {
+                    "test-id": 12,
+                    "test-name": "TestU01 Crush smarsa_BirthdaySpacings|N=5|n=20000000|r=0|d=2097152|t=3|p=1",
+                    "bytes-per-repetiton": 1200000000,
+                    "arguments:": "--params 5 20000000 0 2097152 3 1"
+                },
+                {
+                    "test-id": 13,
+                    "test-name": "TestU01 Crush smarsa_BirthdaySpacings|N=5|n=20000000|r=0|d=65536|t=4|p=1",
+                    "bytes-per-repetiton": 1600000000,
+                    "arguments:": "--params 5 20000000 0 65536 4 1"
+                },
+                {
+                    "test-id": 14,
+                    "test-name": "TestU01 Crush smarsa_BirthdaySpacings|N=3|n=20000000|r=0|d=512|t=7|p=1",
+                    "bytes-per-repetiton": 1680000000,
+                    "arguments:": "--params 3 20000000 0 512 7 1"
+                },
+                {
+                    "test-id": 15,
+                    "test-name": "TestU01 Crush smarsa_BirthdaySpacings|N=3|n=20000000|r=7|d=512|t=7|p=1",
+                    "bytes-per-repetiton": 1680000000,
+                    "arguments:": "--params 3 20000000 7 512 7 1"
+                },
+                {
+                    "test-id": 16,
+                    "test-name": "TestU01 Crush smarsa_BirthdaySpacings|N=3|n=20000000|r=14|d=256|t=8|p=1",
+                    "bytes-per-repetiton": 1920000000,
+                    "arguments:": "--params 3 20000000 14 256 8 1"
+                },
+                {
+                    "test-id": 17,
+                    "test-name": "TestU01 Crush smarsa_BirthdaySpacings|N=3|n=20000000|r=22|d=256|t=8|p=1",
+                    "bytes-per-repetiton": 1920000000,
+                    "arguments:": "--params 3 20000000 22 256 8 1"
+                },
+                {
+                    "test-id": 18,
+                    "test-name": "TestU01 Crush snpair_ClosePairs|N=10|n=2000000|r=0|t=2|p=0|m=30|Torus=TRUE",
+                    "bytes-per-repetiton": 160000000,
+                    "arguments:": "--params 10 2000000 0 2 0 30"
+                },
+                {
+                    "test-id": 19,
+                    "test-name": "TestU01 Crush snpair_ClosePairs|N=10|n=2000000|r=0|t=3|p=0|m=30|Torus=TRUE",
+                    "bytes-per-repetiton": 240000000,
+                    "arguments:": "--params 10 2000000 0 3 0 30"
+                },
+                {
+                    "test-id": 20,
+                    "test-name": "TestU01 Crush snpair_ClosePairs|N=5|n=2000000|r=0|t=7|p=0|m=30|Torus=TRUE",
+                    "bytes-per-repetiton": 280000000,
+                    "arguments:": "--params 5 2000000 0 7 0 30"
+                },
+                {
+                    "test-id": 21,
+                    "test-name": "TestU01 Crush snpair_ClosePairsBitMatch|N=4|n=4000000|r=0|t=2",
+                    "bytes-per-repetiton": 128000000,
+                    "arguments:": "--params 4 4000000 0 2"
+                },
+                {
+                    "test-id": 22,
+                    "test-name": "TestU01 Crush snpair_ClosePairsBitMatch|N=2|n=4000000|r=0|t=4",
+                    "bytes-per-repetiton": 128000000,
+                    "arguments:": "--params 2 4000000 0 4"
+                },
+                {
+                    "test-id": 23,
+                    "test-name": "TestU01 Crush sknuth_SimpPoker|N=1|n=40000000|r=0|d=16|k=16",
+                    "bytes-per-repetiton": 2560000000,
+                    "arguments:": "--params 1 40000000 0 16 16"
+                },
+                {
+                    "test-id": 24,
+                    "test-name": "TestU01 Crush sknuth_SimpPoker|N=1|n=40000000|r=26|d=16|k=16",
+                    "bytes-per-repetiton": 2560000000,
+                    "arguments:": "--params 1 40000000 26 16 16"
+                },
+                {
+                    "test-id": 25,
+                    "test-name": "TestU01 Crush sknuth_SimpPoker|N=1|n=10000000|r=0|d=64|k=64",
+                    "bytes-per-repetiton": 2560000000,
+                    "arguments:": "--params 1 10000000 0 64 64"
+                },
+                {
+                    "test-id": 26,
+                    "test-name": "TestU01 Crush sknuth_SimpPoker|N=1|n=10000000|r=24|d=64|k=64",
+                    "bytes-per-repetiton": 2560000000,
+                    "arguments:": "--params 1 10000000 24 64 64"
+                },
+                {
+                    "test-id": 27,
+                    "test-name": "TestU01 Crush sknuth_CouponCollector|N=1|n=40000000|r=0|d=4",
+                    "bytes-per-repetiton": 1346659569,
+                    "arguments:": "--params 1 40000000 0 4"
+                },
+                {
+                    "test-id": 28,
+                    "test-name": "TestU01 Crush sknuth_CouponCollector|N=1|n=40000000|r=28|d=4",
+                    "bytes-per-repetiton": 1346664412,
+                    "arguments:": "--params 1 40000000 28 4"
+                },
+                {
+                    "test-id": 29,
+                    "test-name": "TestU01 Crush sknuth_CouponCollector|N=1|n=10000000|r=0|d=16",
+                    "bytes-per-repetiton": 1994400083,
+                    "arguments:": "--params 1 10000000 0 16"
+                },
+                {
+                    "test-id": 30,
+                    "test-name": "TestU01 Crush sknuth_CouponCollector|N=1|n=10000000|r=26|d=16",
+                    "bytes-per-repetiton": 1994386511,
+                    "arguments:": "--params 1 10000000 26 16"
+                },
+                {
+                    "test-id": 31,
+                    "test-name": "TestU01 Crush sknuth_Gap|N=1|n=100000000|r=0|Alpha=0|Beta=0.125",
+                    "bytes-per-repetiton": 3232052221,
+                    "arguments:": "--params 1 100000000 0 0 0.125"
+                },
+                {
+                    "test-id": 32,
+                    "test-name": "TestU01 Crush sknuth_Gap|N=1|n=100000000|r=27|Alpha=0|Beta=0.125",
+                    "bytes-per-repetiton": 3231995609,
+                    "arguments:": "--params 1 100000000 27 0 0.125"
+                },
+                {
+                    "test-id": 33,
+                    "test-name": "TestU01 Crush sknuth_Gap|N=1|n=5000000|r=0|Alpha=0|Beta=0.00390625",
+                    "bytes-per-repetiton": 5171841837,
+                    "arguments:": "--params 1 5000000 0 0 0.00390625"
+                },
+                {
+                    "test-id": 34,
+                    "test-name": "TestU01 Crush sknuth_Gap|N=1|n=5000000|r=22|Alpha=0|Beta=0.00390625",
+                    "bytes-per-repetiton": 5170831904,
+                    "arguments:": "--params 1 5000000 22 0 0.00390625"
+                },
+                {
+                    "test-id": 35,
+                    "test-name": "TestU01 Crush sknuth_Run|N=1|n=500000000|r=0|Up=TRUE",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 1 500000000 0 1"
+                },
+                {
+                    "test-id": 36,
+                    "test-name": "TestU01 Crush sknuth_Run|N=1|n=500000000|r=15|Up=FALSE",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 1 500000000 15 0"
+                },
+                {
+                    "test-id": 37,
+                    "test-name": "TestU01 Crush sknuth_Permutation|N=1|n=50000000|r=0|t=10|Sparse=FALSE",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 1 50000000 0 10"
+                },
+                {
+                    "test-id": 38,
+                    "test-name": "TestU01 Crush sknuth_Permutation|N=1|n=50000000|r=15|t=10|Sparse=FALSE",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 1 50000000 15 10"
+                },
+                {
+                    "test-id": 39,
+                    "test-name": "TestU01 Crush sknuth_CollisionPermut|N=5|n=10000000|r=0|t=13|Sparse=TRUE",
+                    "bytes-per-repetiton": 2600000000,
+                    "arguments:": "--params 5 10000000 0 13"
+                },
+                {
+                    "test-id": 40,
+                    "test-name": "TestU01 Crush sknuth_CollisionPermut|N=5|n=10000000|r=15|t=13|Sparse=TRUE",
+                    "bytes-per-repetiton": 2600000000,
+                    "arguments:": "--params 5 10000000 15 13"
+                },
+                {
+                    "test-id": 41,
+                    "test-name": "TestU01 Crush sknuth_MaxOft|N=10|n=10000000|r=0|d=100000|t=5",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 10 10000000 0 100000 5"
+                },
+                {
+                    "test-id": 42,
+                    "test-name": "TestU01 Crush sknuth_MaxOft|N=5|n=10000000|r=0|d=100000|t=10",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 5 10000000 0 100000 10"
+                },
+                {
+                    "test-id": 43,
+                    "test-name": "TestU01 Crush sknuth_MaxOft|N=1|n=10000000|r=0|d=100000|t=20",
+                    "bytes-per-repetiton": 800000000,
+                    "arguments:": "--params 1 10000000 0 100000 20"
+                },
+                {
+                    "test-id": 44,
+                    "test-name": "TestU01 Crush sknuth_MaxOft|N=1|n=10000000|r=0|d=100000|t=30",
+                    "bytes-per-repetiton": 1200000000,
+                    "arguments:": "--params 1 10000000 0 100000 30"
+                },
+                {
+                    "test-id": 45,
+                    "test-name": "TestU01 Crush svaria_SampleProd|N=1|n=10000000|r=0|t=10",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 1 10000000 0 10"
+                },
+                {
+                    "test-id": 46,
+                    "test-name": "TestU01 Crush svaria_SampleProd|N=1|n=10000000|r=0|t=30",
+                    "bytes-per-repetiton": 1200000000,
+                    "arguments:": "--params 1 10000000 0 30"
+                },
+                {
+                    "test-id": 47,
+                    "test-name": "TestU01 Crush svaria_SampleMean|N=10000000|n=20|r=0",
+                    "bytes-per-repetiton": 800000000,
+                    "arguments:": "--params 10000000 20 0"
+                },
+                {
+                    "test-id": 48,
+                    "test-name": "TestU01 Crush svaria_SampleCorr|N=1|n=500000000|r=0|k=1",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 1 500000000 0 1"
+                },
+                {
+                    "test-id": 49,
+                    "test-name": "TestU01 Crush svaria_AppearanceSpacings|N=1|Q=10000000|K=400000000|r=0|s=30|L=15",
+                    "bytes-per-repetiton": 820000000,
+                    "arguments:": "--params 1 10000000 400000000 0 30 15"
+                },
+                {
+                    "test-id": 50,
+                    "test-name": "TestU01 Crush svaria_AppearanceSpacings|N=1|Q=10000000|K=100000000|r=20|s=10|L=15",
+                    "bytes-per-repetiton": 880000000,
+                    "arguments:": "--params 1 10000000 100000000 20 10 15"
+                },
+                {
+                    "test-id": 51,
+                    "test-name": "TestU01 Crush svaria_WeightDistrib|N=1|n=2000000|r=0|k=256|Alpha=0|Beta=0.125",
+                    "bytes-per-repetiton": 2048000000,
+                    "arguments:": "--params 1 2000000 0 256 0 0.125"
+                },
+                {
+                    "test-id": 52,
+                    "test-name": "TestU01 Crush svaria_WeightDistrib|N=1|n=2000000|r=8|k=256|Alpha=0|Beta=0.125",
+                    "bytes-per-repetiton": 2048000000,
+                    "arguments:": "--params 1 2000000 8 256 0 0.125"
+                },
+                {
+                    "test-id": 53,
+                    "test-name": "TestU01 Crush svaria_WeightDistrib|N=1|n=2000000|r=16|k=256|Alpha=0|Beta=0.125",
+                    "bytes-per-repetiton": 2048000000,
+                    "arguments:": "--params 1 2000000 16 256 0 0.125"
+                },
+                {
+                    "test-id": 54,
+                    "test-name": "TestU01 Crush svaria_WeightDistrib|N=1|n=2000000|r=24|k=256|Alpha=0|Beta=0.125",
+                    "bytes-per-repetiton": 2048000000,
+                    "arguments:": "--params 1 2000000 24 256 0 0.125"
+                },
+                {
+                    "test-id": 55,
+                    "test-name": "TestU01 Crush svaria_SumCollector|N=1|n=20000000|r=0|g=10",
+                    "bytes-per-repetiton": 1669867632,
+                    "arguments:": "--params 1 20000000 0 10"
+                },
+                {
+                    "test-id": 56,
+                    "test-name": "TestU01 Crush smarsa_MatrixRank|N=1|n=1000000|r=0|s=30|L=60|k=60",
+                    "bytes-per-repetiton": 480000000,
+                    "arguments:": "--params 1 1000000 0 30 60 60"
+                },
+                {
+                    "test-id": 57,
+                    "test-name": "TestU01 Crush smarsa_MatrixRank|N=1|n=1000000|r=20|s=10|L=60|k=60",
+                    "bytes-per-repetiton": 1440000000,
+                    "arguments:": "--params 1 1000000 20 10 60 60"
+                },
+                {
+                    "test-id": 58,
+                    "test-name": "TestU01 Crush smarsa_MatrixRank|N=1|n=50000|r=0|s=30|L=300|k=300",
+                    "bytes-per-repetiton": 600000000,
+                    "arguments:": "--params 1 50000 0 30 300 300"
+                },
+                {
+                    "test-id": 59,
+                    "test-name": "TestU01 Crush smarsa_MatrixRank|N=1|n=50000|r=20|s=10|L=300|k=300",
+                    "bytes-per-repetiton": 1800000000,
+                    "arguments:": "--params 1 50000 20 10 300 300"
+                },
+                {
+                    "test-id": 60,
+                    "test-name": "TestU01 Crush smarsa_MatrixRank|N=1|n=2000|r=0|s=30|L=1200|k=1200",
+                    "bytes-per-repetiton": 384000000,
+                    "arguments:": "--params 1 2000 0 30 1200 1200"
+                },
+                {
+                    "test-id": 61,
+                    "test-name": "TestU01 Crush smarsa_MatrixRank|N=1|n=2000|r=20|s=10|L=1200|k=1200",
+                    "bytes-per-repetiton": 1152000000,
+                    "arguments:": "--params 1 2000 20 10 1200 1200"
+                },
+                {
+                    "test-id": 62,
+                    "test-name": "TestU01 Crush smarsa_Savir2|N=1|n=20000000|r=0|m=1048576|t=30",
+                    "bytes-per-repetiton": 2400000000,
+                    "arguments:": "--params 1 20000000 0 1048576 30"
+                },
+                {
+                    "test-id": 63,
+                    "test-name": "TestU01 Crush smarsa_GCD|N=1|n=100000000|r=0|s=30",
+                    "bytes-per-repetiton": 800000000,
+                    "arguments:": "--params 1 100000000 0 30"
+                },
+                {
+                    "test-id": 64,
+                    "test-name": "TestU01 Crush smarsa_GCD|N=1|n=40000000|r=10|s=20",
+                    "bytes-per-repetiton": 320000800,
+                    "arguments:": "--params 1 40000000 10 20"
+                },
+                {
+                    "test-id": 65,
+                    "test-name": "TestU01 Crush swalk_RandomWalk1|N=1|n=50000000|r=0|s=30|L0=90|L1=90",
+                    "bytes-per-repetiton": 600000000,
+                    "arguments:": "--params 1 50000000 0 30 90 90"
+                },
+                {
+                    "test-id": 66,
+                    "test-name": "TestU01 Crush swalk_RandomWalk1|N=1|n=10000000|r=20|s=10|L0=90|L1=90",
+                    "bytes-per-repetiton": 360000000,
+                    "arguments:": "--params 1 10000000 20 10 90 90"
+                },
+                {
+                    "test-id": 67,
+                    "test-name": "TestU01 Crush swalk_RandomWalk1|N=1|n=5000000|r=0|s=30|L0=1000|L1=1000",
+                    "bytes-per-repetiton": 680000000,
+                    "arguments:": "--params 1 5000000 0 30 1000 1000"
+                },
+                {
+                    "test-id": 68,
+                    "test-name": "TestU01 Crush swalk_RandomWalk1|N=1|n=1000000|r=20|s=10|L0=1000|L1=1000",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 1 1000000 20 10 1000 1000"
+                },
+                {
+                    "test-id": 69,
+                    "test-name": "TestU01 Crush swalk_RandomWalk1|N=1|n=500000|r=0|s=30|L0=10000|L1=10000",
+                    "bytes-per-repetiton": 668000000,
+                    "arguments:": "--params 1 500000 0 30 10000 10000"
+                },
+                {
+                    "test-id": 70,
+                    "test-name": "TestU01 Crush swalk_RandomWalk1|N=1|n=100000|r=20|s=10|L0=10000|L1=10000",
+                    "bytes-per-repetiton": 400000000,
+                    "arguments:": "--params 1 100000 20 10 10000 10000"
+                },
+                {
+                    "test-id": 71,
+                    "test-name": "TestU01 Crush scomp_LinearComp|N=1|n=120000|r=0|s=1",
+                    "bytes-per-repetiton": 480000,
+                    "arguments:": "--params 1 120000 0 1"
+                },
+                {
+                    "test-id": 72,
+                    "test-name": "TestU01 Crush scomp_LinearComp|N=1|n=120000|r=29|s=1",
+                    "bytes-per-repetiton": 480000,
+                    "arguments:": "--params 1 120000 29 1"
+                },
+                {
+                    "test-id": 73,
+                    "test-name": "TestU01 Crush scomp_LempelZiv|N=10|n=33554432|r=0|s=30|k=25",
+                    "bytes-per-repetiton": 44739280,
+                    "arguments:": "--params 10 25 0 30"
+                },
+                {
+                    "test-id": 74,
+                    "test-name": "TestU01 Crush sspectral_Fourier3|N=50000|n=16384|r=0|s=30|k=14",
+                    "bytes-per-repetiton": 109400000,
+                    "arguments:": "--params 50000 14 0 30"
+                },
+                {
+                    "test-id": 75,
+                    "test-name": "TestU01 Crush sspectral_Fourier3|N=50000|n=16384|r=20|s=10|k=14",
+                    "bytes-per-repetiton": 327800000,
+                    "arguments:": "--params 50000 14 20 10"
+                },
+                {
+                    "test-id": 76,
+                    "test-name": "TestU01 Crush sstring_LongestHeadRun|N=1|n=1000|r=0|s=30|L=10000020",
+                    "bytes-per-repetiton": 1333336000,
+                    "arguments:": "--params 1 1000 0 30 10000020"
+                },
+                {
+                    "test-id": 77,
+                    "test-name": "TestU01 Crush sstring_LongestHeadRun|N=1|n=300|r=20|s=10|L=10000020",
+                    "bytes-per-repetiton": 1200002400,
+                    "arguments:": "--params 1 300 20 10 10000020"
+                },
+                {
+                    "test-id": 78,
+                    "test-name": "TestU01 Crush sstring_PeriodsInStrings|N=1|n=300000000|r=0|s=30",
+                    "bytes-per-repetiton": 1200000000,
+                    "arguments:": "--params 1 300000000 0 30"
+                },
+                {
+                    "test-id": 79,
+                    "test-name": "TestU01 Crush sstring_PeriodsInStrings|N=1|n=300000000|r=15|s=15",
+                    "bytes-per-repetiton": 1200000000,
+                    "arguments:": "--params 1 300000000 15 15"
+                },
+                {
+                    "test-id": 80,
+                    "test-name": "TestU01 Crush sstring_HammingWeight2|N=100|n=100000000|r=0|s=30|L=1000000",
+                    "bytes-per-repetiton": 1333360000,
+                    "arguments:": "--params 100 100000000 0 30 1000000"
+                },
+                {
+                    "test-id": 81,
+                    "test-name": "TestU01 Crush sstring_HammingWeight2|N=30|n=100000000|r=20|s=10|L=1000000",
+                    "bytes-per-repetiton": 1200000000,
+                    "arguments:": "--params 30 100000000 20 10 1000000"
+                },
+                {
+                    "test-id": 82,
+                    "test-name": "TestU01 Crush sstring_HammingCorr|N=1|n=500000000|r=0|s=30|L=30",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 1 500000000 0 30 30"
+                },
+                {
+                    "test-id": 83,
+                    "test-name": "TestU01 Crush sstring_HammingCorr|N=1|n=50000000|r=0|s=30|L=300",
+                    "bytes-per-repetiton": 2000000000,
+                    "arguments:": "--params 1 50000000 0 30 300"
+                },
+                {
+                    "test-id": 84,
+                    "test-name": "TestU01 Crush sstring_HammingCorr|N=1|n=10000000|r=0|s=30|L=1200",
+                    "bytes-per-repetiton": 1600000000,
+                    "arguments:": "--params 1 10000000 0 30 1200"
+                },
+                {
+                    "test-id": 85,
+                    "test-name": "TestU01 Crush sstring_HammingIndep|N=1|n=300000000|r=0|s=30|L=30|d=0",
+                    "bytes-per-repetiton": 2400000000,
+                    "arguments:": "--params 1 300000000 0 30 30 0"
+                },
+                {
+                    "test-id": 86,
+                    "test-name": "TestU01 Crush sstring_HammingIndep|N=1|n=100000000|r=20|s=10|L=30|d=0",
+                    "bytes-per-repetiton": 2400000000,
+                    "arguments:": "--params 1 100000000 20 10 30 0"
+                },
+                {
+                    "test-id": 87,
+                    "test-name": "TestU01 Crush sstring_HammingIndep|N=1|n=30000000|r=0|s=30|L=300|d=0",
+                    "bytes-per-repetiton": 2400000000,
+                    "arguments:": "--params 1 30000000 0 30 300 0"
+                },
+                {
+                    "test-id": 88,
+                    "test-name": "TestU01 Crush sstring_HammingIndep|N=1|n=10000000|r=20|s=10|L=300|d=0",
+                    "bytes-per-repetiton": 2400000000,
+                    "arguments:": "--params 1 10000000 20 10 300 0"
+                },
+                {
+                    "test-id": 89,
+                    "test-name": "TestU01 Crush sstring_HammingIndep|N=1|n=10000000|r=0|s=30|L=1200|d=0",
+                    "bytes-per-repetiton": 3200000000,
+                    "arguments:": "--params 1 10000000 0 30 1200 0"
+                },
+                {
+                    "test-id": 90,
+                    "test-name": "TestU01 Crush sstring_HammingIndep|N=1|n=1000000|r=20|s=10|L=1200|d=0",
+                    "bytes-per-repetiton": 960000000,
+                    "arguments:": "--params 1 1000000 20 10 1200 0"
+                },
+                {
+                    "test-id": 91,
+                    "test-name": "TestU01 Crush sstring_Run|N=1|n=1000000000|r=0|s=30",
+                    "bytes-per-repetiton": 538665968,
+                    "arguments:": "--params 1 1000000000 0 30"
+                },
+                {
+                    "test-id": 92,
+                    "test-name": "TestU01 Crush sstring_Run|N=1|n=1000000000|r=20|s=10",
+                    "bytes-per-repetiton": 1615996779,
+                    "arguments:": "--params 1 1000000000 20 10"
+                },
+                {
+                    "test-id": 93,
+                    "test-name": "TestU01 Crush sstring_AutoCor|N=10|n=1000000021|r=0|s=30|d=1",
+                    "bytes-per-repetiton": 1333333400,
+                    "arguments:": "--params 10 1000000021 0 30 1"
+                },
+                {
+                    "test-id": 94,
+                    "test-name": "TestU01 Crush sstring_AutoCor|N=5|n=1000000001|r=20|s=10|d=1",
+                    "bytes-per-repetiton": 2000000020,
+                    "arguments:": "--params 5 1000000001 20 10 1"
+                },
+                {
+                    "test-id": 95,
+                    "test-name": "TestU01 Crush sstring_AutoCor|N=10|n=1000000020|r=0|s=30|d=30",
+                    "bytes-per-repetiton": 1333333400,
+                    "arguments:": "--params 10 1000000020 0 30 30"
+                },
+                {
+                    "test-id": 96,
+                    "test-name": "TestU01 Crush sstring_AutoCor|N=5|n=1000000010|r=20|s=10|d=10",
+                    "bytes-per-repetiton": 2000000040,
+                    "arguments:": "--params 5 1000000010 20 10 10"
+                }
+            ]
+        },
+        "tu01-alphabit-settings": {
+            "defaults": {
+                "test-ids": [
+                    "1-9"
+                ],
+                "repetitions": 819,
+                "bit-nb": "52428800",
+                "bit-r": "0",
+                "bit-s": "32"
+            },
+            "ommited-tests": []
+        },
+        "tu01-alphabit-defaults": {
+            "defaults": {
+                "test-ids": [
+                    "1-9"
+                ],
+                "bit-nb": "52428800",
+                "bit-r": "0",
+                "bit-s": "32"
+            },
+            "test-specific-defaults": [
+                {
+                    "test-id": 1,
+                    "test-name": "TestU01 Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE",
+                    "bytes-per-repetiton": "6553600"
+                },
+                {
+                    "test-id": 2,
+                    "test-name": "TestU01 Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE",
+                    "bytes-per-repetiton": "6553600"
+                },
+                {
+                    "test-id": 3,
+                    "test-name": "TestU01 Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE",
+                    "bytes-per-repetiton": "6553600"
+                },
+                {
+                    "test-id": 4,
+                    "test-name": "TestU01 Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE",
+                    "bytes-per-repetiton": "6553600"
+                },
+                {
+                    "test-id": 5,
+                    "test-name": "TestU01 Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0",
+                    "bytes-per-repetiton": "6553600"
+                },
+                {
+                    "test-id": 6,
+                    "test-name": "TestU01 Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0",
+                    "bytes-per-repetiton": "6553600"
+                },
+                {
+                    "test-id": 7,
+                    "test-name": "TestU01 Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32",
+                    "bytes-per-repetiton": "6553600"
+                },
+                {
+                    "test-id": 8,
+                    "test-name": "TestU01 Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64",
+                    "bytes-per-repetiton": "6553600"
+                },
+                {
+                    "test-id": 9,
+                    "test-name": "TestU01 Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320",
+                    "bytes-per-repetiton": "6553600"
+                }
+            ]
+        },
+        "tu01-blockalphabit-settings": {
+            "defaults": {
+                "test-ids": [
+                    "1-9"
+                ],
+                "repetitions": 819,
+                "bit-nb": "52428800",
+                "bit-r": "0",
+                "bit-s": "32"
+            },
+            "test-specific-settings": [
+                {
+                    "test-id": 1,
+                    "variants": [
+                        {
+                            "bit-w": "1",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "2",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "4",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "8",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "16",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "32",
+                            "repetitions": 819
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 2,
+                    "variants": [
+                        {
+                            "bit-w": "1",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "2",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "4",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "8",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "16",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "32",
+                            "repetitions": 819
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 3,
+                    "variants": [
+                        {
+                            "bit-w": "1",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "2",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "4",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "8",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "16",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "32",
+                            "repetitions": 819
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 4,
+                    "variants": [
+                        {
+                            "bit-w": "1",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "2",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "4",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "8",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "16",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "32",
+                            "repetitions": 819
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 5,
+                    "variants": [
+                        {
+                            "bit-w": "1",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "2",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "4",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "8",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "16",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "32",
+                            "repetitions": 819
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 6,
+                    "variants": [
+                        {
+                            "bit-w": "1",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "2",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "4",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "8",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "16",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "32",
+                            "repetitions": 819
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 7,
+                    "variants": [
+                        {
+                            "bit-w": "1",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "2",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "4",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "8",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "16",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "32",
+                            "repetitions": 819
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 8,
+                    "variants": [
+                        {
+                            "bit-w": "1",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "2",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "4",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "8",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "16",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "32",
+                            "repetitions": 819
+                        }
+                    ],
+                    "omitted-variants": []
+                },
+                {
+                    "test-id": 9,
+                    "variants": [
+                        {
+                            "bit-w": "1",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "2",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "4",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "8",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "16",
+                            "repetitions": 819
+                        },
+                        {
+                            "bit-w": "32",
+                            "repetitions": 819
+                        }
+                    ],
+                    "omitted-variants": []
+                }
+            ]
+        },
+        "tu01-blockalphabit-defaults": {
+            "test-ids": [
+                "1-9"
+            ],
+            "repetitions": 819,
+            "bit-nb": "52428800",
+            "bit-r": "0",
+            "bit-s": "32",
+            "test-specific-defaults": [
+                {
+                    "test-id": 1,
+                    "variants": [
+                        {
+                            "bit-w": 1,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=1",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 2,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=2",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 4,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=4",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 8,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=8",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 16,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=16",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 32,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE|w=32",
+                            "bytes-per-repetition": "6553600"
+                        }
+                    ]
+                },
+                {
+                    "test-id": 2,
+                    "variants": [
+                        {
+                            "bit-w": 1,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=1",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 2,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=2",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 4,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=4",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 8,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=8",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 16,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=16",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 32,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=4|Sparse=FALSE|w=32",
+                            "bytes-per-repetition": "6553600"
+                        }
+                    ]
+                },
+                {
+                    "test-id": 3,
+                    "variants": [
+                        {
+                            "bit-w": 1,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=1",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 2,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=2",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 4,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=4",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 8,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=8",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 16,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=16",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 32,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=8|Sparse=FALSE|w=32",
+                            "bytes-per-repetition": "6553600"
+                        }
+                    ]
+                },
+                {
+                    "test-id": 4,
+                    "variants": [
+                        {
+                            "bit-w": 1,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=1",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 2,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=2",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 4,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=4",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 8,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=8",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 16,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=16",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 32,
+                            "test-name": "TestU01 Block Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=16|Sparse=FALSE|w=32",
+                            "bytes-per-repetition": "6553600"
+                        }
+                    ]
+                },
+                {
+                    "test-id": 5,
+                    "variants": [
+                        {
+                            "bit-w": 1,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=1",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 2,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=2",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 4,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=4",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 8,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=8",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 16,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=16",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 32,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=1638400|r=0|s=32|L=16|d=0|w=32",
+                            "bytes-per-repetition": "6553600"
+                        }
+                    ]
+                },
+                {
+                    "test-id": 6,
+                    "variants": [
+                        {
+                            "bit-w": 1,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=1",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 2,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=2",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 4,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=4",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 8,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=8",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 16,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=16",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 32,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingIndep|N=1|n=819200|r=0|s=32|L=32|d=0|w=32",
+                            "bytes-per-repetition": "6553600"
+                        }
+                    ]
+                },
+                {
+                    "test-id": 7,
+                    "variants": [
+                        {
+                            "bit-w": 1,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=1",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 2,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=2",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 4,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=4",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 8,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=8",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 16,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=16",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 32,
+                            "test-name": "TestU01 Block Alphabit sstring_HammingCorr|N=1|n=1638400|r=0|s=32|L=32|w=32",
+                            "bytes-per-repetition": "6553600"
+                        }
+                    ]
+                },
+                {
+                    "test-id": 8,
+                    "variants": [
+                        {
+                            "bit-w": 1,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=1",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 2,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=2",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 4,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=4",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 8,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=8",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 16,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=16",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 32,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=819200|r=0|s=32|L0=64|L1=64|w=32",
+                            "bytes-per-repetition": "6553600"
+                        }
+                    ]
+                },
+                {
+                    "test-id": 9,
+                    "variants": [
+                        {
+                            "bit-w": 1,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=1",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 2,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=2",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 4,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=4",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 8,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=8",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 16,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=16",
+                            "bytes-per-repetition": "6553600"
+                        },
+                        {
+                            "bit-w": 32,
+                            "test-name": "TestU01 Block Alphabit swalk_RandomWalk1|N=1|n=163840|r=0|s=32|L0=320|L1=320|w=32",
+                            "bytes-per-repetition": "6553600"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
