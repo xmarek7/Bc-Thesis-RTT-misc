@@ -153,7 +153,7 @@ def dieharder_defaults(args):
             for ntup in range(ntup_min, ntup_max + 1):
                 test["variants"].append({
                     "ntup" : ntup,
-                    "bytes-per-psamples": get_bytes_per_psample(args, test_id, ntup)
+                    "bytes-per-psample": get_bytes_per_psample(args, test_id, ntup)
                 })
         else:
             test["bytes-per-psample"] = get_bytes_per_psample(args, test_id, None)
