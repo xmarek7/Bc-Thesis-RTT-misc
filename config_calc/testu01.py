@@ -493,6 +493,7 @@ def get_test_name(battery: str, test_id: int) -> str:
         return ALPHABIT_TEST_NAMES[test_id]
     raise ValueError("Unknown battery!")
 
+
 def is_irregular(battery: str, test_id: int) -> bool:
     return (battery == "crush" and (27 <= test_id <= 34 or test_id in {55, 91, 92})) \
             or (battery == "small_crush" and (test_id == 3 or test_id == 5)) \
@@ -581,7 +582,7 @@ def rabbit(args, file_size: int):
         repetitions = (file_size * 8 // get_bytes_per_repetition(args, "rabbit", test_id)) + (1 if args.increased else 0)
 
         if repetitions == 0:
-            result["omitted-tests"].add(test_id)
+            result["omitted-tests"].append(test_id)
         else:
             result["defaults"]["test-ids"].append(test_id)
 
