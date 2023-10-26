@@ -546,6 +546,11 @@ def crush(args, battery: str, file_size: int):
         else:
             result["defaults"]["test-ids"].append(test_id)
             
+        # Tests omitted by default
+        if battery == "crush" and (test_id == 71 or test_id == 72):
+            repetitions = 0
+
+
         if repetitions > 1 or ((is_irregular(battery, test_id) or (battery == "crush" and test_id == 64)) and repetitions != 0):
             test = {
                 "test-id": test_id,
@@ -742,5 +747,8 @@ def crush_defaults(args, battery: str):
                 "bytes-per-repetiton": bytes_per_repetiton,
                 "arguments:": get_params(battery, test_id)
             })
+        if test_id == 71 or test_id == 72:
+            result["test-specific-defaults"][-1]["comment"] = \
+                "This test is omitted due to small data size and long runtime."
             
     return result
