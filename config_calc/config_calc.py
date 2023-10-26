@@ -22,7 +22,7 @@ def create_json(args, json_file, file_size: int):
             "nist-sts-defaults": nist_sts.nist_sts_defaults(args),
 
             "tu01-rabbit-settings": testu01.rabbit(args, file_size), 
-            "tu01-rabbit-default": testu01.rabbit_defaults(args),
+            "tu01-rabbit-defaults": testu01.rabbit_defaults(args),
             
             "tu01-smallcrush-settings": testu01.crush(args, "small_crush", file_size),
             "tu01-smallcrush-defaults": testu01.crush_defaults(args, "small_crush"),
