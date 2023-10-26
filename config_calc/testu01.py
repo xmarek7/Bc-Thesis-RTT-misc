@@ -624,7 +624,10 @@ def rabbit_defaults(args):
                 "bytes-per-repetiton": bytes_per_repetiton,
                 #"arguments:": get_params("rabbit", test_id)
             })
-            
+        
+        if test_id == 5:
+            result["test-specific-defaults"][-1]["comment"] = \
+                "This test is omitted due to bad behaviour"            
     return result
 
 def alphabit(args, file_size: int):
