@@ -67,7 +67,7 @@ def parse_arguments() -> argparse.Namespace:
     )
     group.add_argument("-s", "--size",
                        type=int,
-                       help="Direct size of data that will be tested. Only accepts integers so far."
+                       help="Size of data that will be tested in bytes. Only accepts integers so far."
     )
 
     group.add_argument("-m", "--max-test-size",
