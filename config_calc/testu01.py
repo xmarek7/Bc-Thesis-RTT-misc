@@ -504,18 +504,7 @@ def get_bytes_per_repetition(args, battery: str, test_id: int) -> int:
     elif battery == "small_crush":
         needed_bytes = SMALL_CRUSH_BYTES_PER_REPETITION[test_id]
     elif battery == "rabbit":
-        needed_bytes = RABBIT_BYTES_PER_REPETITION[test_id] * 8
-    else:
-        raise ValueError("Uknown battery: {}".format(battery))
-
-    if is_irregular(battery, test_id):
-        return int(needed_bytes * (1 + args.tu01_threshold))
-    return needed_bytes
-
-
-def get_bits_per_repetition(args, battery: str, test_id: int) -> int:
-    if battery == "rabbit":
-        needed_bytes = RABBIT_BYTES_PER_REPETITION[test_id] * 8
+        needed_bytes = RABBIT_BYTES_PER_REPETITION[test_id]
     else:
         raise ValueError("Uknown battery: {}".format(battery))
 
@@ -577,7 +566,7 @@ def rabbit(args, file_size: int):
 
     for test_id in range(1, 27):        
         # TODO - changed bit_nb
-        repetitions = (file_size * 8 // get_bytes_per_repetition(args, "rabbit", test_id)) + (1 if args.increased else 0)
+        repetitions = (file_size // get_bytes_per_repetition(args, "rabbit", test_id)) + (1 if args.increased else 0)
         # test omitted by default due to bad behaviour
         if test_id == 5:
             repetitions = 0
