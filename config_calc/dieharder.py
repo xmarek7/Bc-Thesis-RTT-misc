@@ -160,7 +160,11 @@ def dieharder_defaults(args):
 
         if test_id in {201, 204}:
             test["psamples"] = 1000
-        if test_id in {205, 206, 207, 208, 209}:
+        elif test_id in {205, 206, 207, 208, 209}:
             test["psamples"] = 1
+
+        if test_id in {13, 16, 207, 208}:
+            test["comment"] = "WARNING - this test reads irregular ammount of bytes."
+
         defaults["test-specific-defaults"].append(test)
     return defaults
