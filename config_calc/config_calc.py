@@ -45,7 +45,7 @@ def main(args) -> int:
         data_size = largest_bytes_per_test(args)
         print("For each test to be executed at least once are {} bytes required".format(data_size))
     elif args.data_file is not None:  
-        data = stat(args.data_file).st_size
+        data_size = stat(args.data_file).st_size
     else:
         parsed = utilities.parse_size(args.size)
         if parsed is None:
