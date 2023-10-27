@@ -186,7 +186,6 @@ RABBIT_BYTES_PER_REPETITION = {
     2:6553600,
     3:6553600,
     4:6553600,
-    5:3060,
     6:4194304,
     7:131072,
     8:6553200,
@@ -551,7 +550,10 @@ def crush(args, battery: str, file_size: int):
     result["omitted-tests"] = concacenate_test_ids(result["omitted-tests"])
     return result
 
-            
+def rabbit_bytes_per_repetition(args, test_id) -> int:
+
+    
+
 def rabbit(args, file_size: int):
     default_repetitions = (file_size * 8) // args.tu01_bit_nb
     result = {
@@ -714,9 +716,6 @@ def block_alphabit_defaults(args):
     
         defaults["test-specific-defaults"].append(test)
     return defaults
-
-
-
 
 
 def crush_defaults(args, battery: str):
