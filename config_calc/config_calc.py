@@ -2,18 +2,18 @@ import dieharder
 import nist_sts
 import testu01
 import json
+import utilities
 
 from typing import List
-from sys import argv
+from sys import argv, stderr, exit
 from os import stat
 import argparse
-
-
 
 
 def create_json(args, json_file, file_size: int):
     result = {
         "options": argv,
+        "data-size": file_size,
         "randomness-testing-toolkit": {
             "dieharder-settings": dieharder.dieharder_test(args, file_size),
             "dieharder-defaults": dieharder.dieharder_defaults(args),
@@ -40,34 +40,43 @@ def create_json(args, json_file, file_size: int):
     print(json.dumps(result, indent=4), file=json_file)
 
 
-def main(args):
+def main(args) -> int:
     if args.max_test_size:
         data_size = largest_bytes_per_test(args)
         print("For each test to be executed at least once are {} bytes required".format(data_size))
+    elif args.data_file is not None:  
+        data = stat(args.data_file).st_size
     else:
-        data_size = args.size if args.data_file is None else stat(args.data_file).st_size
-    
-    
+        parsed = utilities.parse_size(args.size)
+        if parsed is None:
+            print("File size string is not in valid format.", file=stderr)
+            exit(-1)    
+        data_size = parsed
+
+    if data_size == 0:
+        print("The data size is 0, please insert a positive number", file=stderr)
+        exit(-1)
+
     with open(args.config_file, "w") as config_file:
         create_json(args, config_file, data_size)
-
 
 
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog = "Configuration calculator for RTT",
-        description= "Calculates configuration file for RTT and rtt-py"
+        description= "Calculates battery configuration file for RTT and rtt-py"
     )
 
-    # Input size arguments
+    # Input size arguments - only one is accepter
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("-f", "--data-file",
                        type=str,
                        help="Path to file with data to be tested"
     )
+
     group.add_argument("-s", "--size",
-                       type=int,
-                       help="Size of data that will be tested in bytes. Only accepts integers so far."
+                       type=str,
+                       help="Size of data that will be tested. Either integer, or integer followed by a unit (K, M, G, B accepted as powers of two)."
     )
 
     group.add_argument("-m", "--max-test-size",
@@ -107,7 +116,6 @@ def parse_arguments() -> argparse.Namespace:
                         type=int,
                         default=52428800,
                         help="Argument to TestU01's Rabbit, Alphabit and BlockAlphabit batteries. Defaults to 52428800.")
-
 
     return parser.parse_args()
 
