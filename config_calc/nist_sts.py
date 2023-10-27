@@ -19,7 +19,13 @@ TEST_NAMES = {
 def nist_sts_test(args, file_size: int):
     # no test set for execution
     if file_size < args.nist_stream_size:
-        return {"comment": "Given NIST stream size is too big."}
+        return {
+            "defaults":{
+                "test-ids": []
+            },
+            "omitted-test":["1-15"],
+            "comment": "Set NIST Stream Size it too big for the data size."
+        }
     return {
         "defaults":{
             "test-ids": ["1-15"],
