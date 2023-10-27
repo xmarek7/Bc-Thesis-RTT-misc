@@ -181,7 +181,6 @@ SMALL_CRUSH_BYTES_PER_REPETITION = {
     10: 20000000,
 }
 
-
 RABBIT_BYTES_PER_REPETITION = {
     1:6553584,
     2:6553600,
@@ -362,7 +361,6 @@ SMALL_CRUSH_TEST_NAMES = {
     10: "TestU01 Small Crush swalk_RandomWalk1|N=1|n=1000000|r=0|s=30|L0=150|L1=150",
 }
 
-
 CRUSH_PARAMS = {
     1: "--params 1 500000000 0 4096 2",
     2: "--params 1 300000000 0 64 4",
@@ -541,15 +539,14 @@ def crush(args, battery: str, file_size: int):
     min_id, max_id = 1, (96 if battery == "crush" else 10)
     for test_id in range(min_id, max_id + 1):
         repetitions = (file_size // get_bytes_per_repetition(args, battery, test_id)) + (1 if args.increased else 0)
-        if repetitions == 0:
-            result["omitted-tests"].append(test_id)
-        else:
-            result["defaults"]["test-ids"].append(test_id)
-            
-        # Tests omitted by default
+        # Tests omitted by default due to bad behaviour
         if battery == "crush" and (test_id == 71 or test_id == 72):
             repetitions = 0
-
+        
+        if repetitions == 0:
+            result["omitted-tests"].append(test_id)
+            continue
+        result["defaults"]["test-ids"].append(test_id)
 
         if repetitions > 1 or ((is_irregular(battery, test_id) or (battery == "crush" and test_id == 64)) and repetitions != 0):
             test = {
@@ -578,18 +575,17 @@ def rabbit(args, file_size: int):
         "omitted-tests": []
     }
 
-    for test_id in range(1, 27):
-        if test_id == 5:
-            result["omitted-tests"].append(test_id)
-            continue
-        
+    for test_id in range(1, 27):        
         # TODO - changed bit_nb
         repetitions = (file_size * 8 // get_bytes_per_repetition(args, "rabbit", test_id)) + (1 if args.increased else 0)
+        # test omitted by default due to bad behaviour
+        if test_id == 5:
+            repetitions = 0
 
         if repetitions == 0:
             result["omitted-tests"].append(test_id)
-        else:
-            result["defaults"]["test-ids"].append(test_id)
+            continue
+        result["defaults"]["test-ids"].append(test_id)
 
         if repetitions != default_repetitions or is_irregular("rabbit", test_id):
             test = {
@@ -624,8 +620,10 @@ def rabbit_defaults(args):
                 "bytes-per-repetiton": bytes_per_repetiton,
                 #"arguments:": get_params("rabbit", test_id)
             })
-        
-        if test_id == 5:
+        if is_irregular("rabbit", test_id):
+            result["test-specific-defaults"][-1]["comment"] = \
+                 "WARNING - this test reads irregular ammount of bytes."
+        elif test_id == 5:
             result["test-specific-defaults"][-1]["comment"] = \
                 "This test is omitted due to bad behaviour"            
     return result
@@ -646,7 +644,7 @@ def alphabit(args, file_size: int):
 
     if repetitions == 0:
         result["defaults"]["test-ids"] = []
-        result["ommited-tests"]: ["1-9"]
+        result["ommited-tests"] = ["1-9"]
 
     return result
 
@@ -681,11 +679,12 @@ def block_alphabit(args, file_size: int):
             "bit-r": "0",
             "bit-s": "32"
         },
-        "test-specific-settings": []
+        "test-specific-settings": [],
+        "omitted-tests" : []
     }
     if repetitions == 0:
         result["defaults"]["test-ids"] = []
-        result["ommited-tests"]: ["1-9"]
+        result["ommited-tests"] = ["1-9"]
         return result
 
     for test_id in range(1, 10):
@@ -750,7 +749,10 @@ def crush_defaults(args, battery: str):
                 "bytes-per-repetiton": bytes_per_repetiton,
                 "arguments:": get_params(battery, test_id)
             })
-        if test_id == 71 or test_id == 72:
+        if is_irregular(battery, test_id) or (battery == "crush" and test_id == 64):
+                result["test-specific-defaults"][-1]["comment"] = \
+                    "WARNING - this test reads irregular ammount of bytes."
+        if battery == "crush" and (test_id == 71 or test_id == 72):
             result["test-specific-defaults"][-1]["comment"] = \
                 "This test is omitted due to small data size and long runtime."
             
