@@ -1,4 +1,5 @@
 from utilities import concacenate_test_ids
+from typing import Optional
 
 ALPHABIT_TEST_NAMES = {
     1: "TestU01 Alphabit smultin_MultinomialBitsOver|N=1|n=52428800|r=0|s=32|L=2|Sparse=FALSE",
@@ -181,32 +182,62 @@ SMALL_CRUSH_BYTES_PER_REPETITION = {
     10: 20000000,
 }
 
+RABBIT_MIN_NB = {
+    1: 500,
+    2: 500,
+    3: 500,
+    4: 500,
+    5: 500,
+    6: 500,
+    7: 500,
+    8: 500,
+    9: 31200,
+    10: 960,
+    11: 960,
+    12: 500,
+    13: 500,
+    14: 500,
+    15: 960,
+    16: 1920,
+    17: 3840,
+    18: 500,
+    19: 500,
+    20: 500,
+    21: 51200,
+    22: 5120000,
+    23: 52428800,
+    24: 960,
+    25: 30720,
+    26: 300480
+}
+
 RABBIT_BYTES_PER_REPETITION = {
-    1:6553584,
-    2:6553600,
-    3:6553600,
-    4:6553600,
-    6:4194304,
-    7:131072,
-    8:6553200,
-    9:6553440,
-    10:6553600,
-    11:6553600,
-    12:6553600,
-    13:6553600,
-    14:6553600,
-    15:6553600,
-    16:6553600,
-    17:6553600,
-    18:6553596,
-    19:6553596,
-    20:5245668,
-    21:6553600,
-    22:6553600,
-    23:6553600,
-    24:6553600,
-    25:6553600,
-    26:6552968,
+    1: 6553584,
+    2: 6553600,
+    3: 6553600,
+    4: 6553600,
+    5: 1,
+    6: 4194304,
+    7: 131072,
+    8: 6553200,
+    9: 6553440,
+    10: 6553600,
+    11: 6553600,
+    12: 6553600,
+    13: 6553600,
+    14: 6553600,
+    15: 6553600,
+    16: 6553600,
+    17: 6553600,
+    18: 6553596,
+    19: 6553596,
+    20: 5245668,
+    21: 6553600,
+    22: 6553600,
+    23: 6553600,
+    24: 6553600,
+    25: 6553600,
+    26: 6552968,
 }
 
 RABBIT_TEST_NAMES = {
@@ -479,6 +510,7 @@ def get_params(battery: str, test_id: int,)  -> str:
         return SMALL_CRUSH_PARAMS[test_id]
     raise ValueError("Battery must be crush or small_crush.")
 
+
 def get_test_name(battery: str, test_id: int) -> str:
     if battery == "crush":
         return CRUSH_TEST_NAMES[test_id]
@@ -502,8 +534,6 @@ def get_bytes_per_repetition(args, battery: str, test_id: int) -> int:
         needed_bytes = CRUSH_BYTES_PER_REPETITION[test_id]
     elif battery == "small_crush":
         needed_bytes = SMALL_CRUSH_BYTES_PER_REPETITION[test_id]
-    elif battery == "rabbit":
-        needed_bytes = RABBIT_BYTES_PER_REPETITION[test_id]
     else:
         raise ValueError("Uknown battery: {}".format(battery))
 
@@ -550,8 +580,16 @@ def crush(args, battery: str, file_size: int):
     result["omitted-tests"] = concacenate_test_ids(result["omitted-tests"])
     return result
 
-def rabbit_bytes_per_repetition(args, test_id) -> int:
 
+def rabbit_bytes_per_repetition(args, test_id) -> Optional[int]:
+    min_nb = RABBIT_MIN_NB[test_id]
+    if args.tu01_bit_nb < min_nb:
+        return None
+    
+    needed_bytes = RABBIT_BYTES_PER_REPETITION[test_id]
+    if is_irregular("rabbit", test_id):
+        return int(needed_bytes * (1 + args.tu01_threshold))
+    return needed_bytes
     
 
 def rabbit(args, file_size: int):
@@ -568,7 +606,12 @@ def rabbit(args, file_size: int):
 
     for test_id in range(1, 27):        
         # TODO - changed bit_nb
-        repetitions = (file_size // get_bytes_per_repetition(args, "rabbit", test_id)) + (1 if args.increased else 0)
+        bytes_per_rep = rabbit_bytes_per_repetition(args, test_id)
+        if bytes_per_rep is None:
+            result["omitted-tests"].append(test_id)
+            continue
+        
+        repetitions = (file_size // bytes_per_rep) + (1 if args.increased else 0)
         # test omitted by default due to bad behaviour
         if test_id == 5:
             repetitions = 0
@@ -604,7 +647,14 @@ def rabbit_defaults(args):
     }
 
     for test_id in range(1, 27):
-        bytes_per_repetiton = get_bytes_per_repetition(args, "rabbit", test_id)
+        bytes_per_repetiton = rabbit_bytes_per_repetition(args, test_id)
+        if bytes_per_repetiton is None:
+            result["test-specific-defaults"].append({
+                    "test-id": test_id,
+                    "test-name": get_test_name("rabbit", test_id),
+                    "comment": "This test is omitted because the given bit_nb is too small for this test."
+                    #"arguments:": get_params("rabbit", test_id)
+                 })
         result["test-specific-defaults"].append({
                 "test-id": test_id,
                 "test-name": get_test_name("rabbit", test_id),
@@ -619,6 +669,8 @@ def rabbit_defaults(args):
                 "This test is omitted due to bad behaviour"            
     return result
 
+
+# TODO: increased repetitions
 def alphabit(args, file_size: int):
     repetitions = (file_size * 8) // args.tu01_bit_nb
 
@@ -660,6 +712,7 @@ def alphabit_defaults(args):
     return result
 
 
+# TODO: increased repetitions
 def block_alphabit(args, file_size: int):
     repetitions = (file_size * 8) // args.tu01_bit_nb
     result = {
