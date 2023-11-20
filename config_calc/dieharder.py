@@ -46,7 +46,7 @@ TEST_NAMES = {
     209: "Dieharder DAB Monobit 2 Test",
 }
 
-TEST_IDS = [0, 1, 2, 3, 4, 8, 9, 10, 11, 12, 13, 15, 16, 17, 100, 101, 102, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209]
+TEST_IDS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 100, 101, 102, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209]
 
 def get_bytes_per_psample(args, test_id: int, ntup: Optional[int]) -> Optional[int]:
     # test with ntuples
@@ -105,6 +105,10 @@ def dieharder_test(args, data_size: int):
 
 def dieharder_no_variant_test(args, test_id, result, data_size: int):
     psamples = calculate_psamples(args, test_id, None, data_size)
+    # Test marked as bad by Dieharder
+    if test_id in {5, 6, 7, 14}:
+        psamples = 0
+
     if psamples > 0:
         result["defaults"]["test-ids"].append(test_id)
         result["test-specific-settings"].append({
@@ -165,6 +169,8 @@ def dieharder_defaults(args):
 
         if test_id in {13, 16, 207, 208}:
             test["comment"] = "WARNING - this test reads irregular ammount of bytes."
+        elif test_id in {5, 6, 7, 14}:
+            test["comment"] = "WARNING - this was marked as bad by Dierharder."
 
         defaults["test-specific-defaults"].append(test)
     return defaults
