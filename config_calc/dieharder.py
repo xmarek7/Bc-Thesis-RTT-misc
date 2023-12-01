@@ -4,8 +4,9 @@ from utilities import concacenate_test_ids
 
 
 BYTES_PER_PSAMPLE = {  0:   153600,    1: 4000020,     2: 5120000,     3: 2400000,
-                       4:   1048583,   8: 256004,      9: 5120000,    10: 96000,
-                      11:  64000,     12: 48000,      13: 9225522,    15: 400000,
+                       4:   1048583,   5: 8388608,     6: 5592416,     7: 2621484,
+                       8:   256004,    9: 5120000,    10: 96000,      11:  64000,
+                      12: 48000,      13: 9225522,    14: 796,        15: 400000,
                       16:  5402336,   17: 80000000,  100: 400000,    101: 400000,
                      102: 400000,    204: 40000,     205: 614400000, 206: 51200000,
                      207: 452016414, 208: 116881518, 209: 260000000}
@@ -62,7 +63,8 @@ def get_bytes_per_psample(args, test_id: int, ntup: Optional[int]) -> Optional[i
     elif test_id in {13, 16, 207, 208}:
         return int(BYTES_PER_PSAMPLE[test_id] * (1 + args.dieharder_threshold))
     # rest of tests
-    elif test_id in {0, 1, 2, 3, 4, 8, 9, 10, 11, 12, 15, 17, 100, 101, 102, 204, 205, 206, 209} and ntup is None:
+    elif test_id in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 17,
+                      100, 101, 102, 204, 205, 206, 209} and ntup is None:
         return BYTES_PER_PSAMPLE[test_id]
     raise ValueError("Invalid test id or combination of test id and ntuples")
 
